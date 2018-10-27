@@ -1,0 +1,24 @@
+.dash_main {
+  height: 100vh;
+  background: lightcoral;
+  display: Flex;
+
+  .product_container {
+    display: flex;
+
+    .product_left {
+      height: 50vh;
+      width: 40vw;
+      background: orange;
+      border: 1.3px dashed red;
+      color: white;
+    }
+    .product_right {
+      height: 50vh;
+      width: 40vw;
+      background: blue;
+      border: 1.3px dashed red;
+      color: white;
+    }
+  }
+}
