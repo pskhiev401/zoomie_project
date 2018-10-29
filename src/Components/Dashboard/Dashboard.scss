@@ -1,10 +1,11 @@
 .dash_main {
   height: 100vh;
-  background: lightcoral;
   display: Flex;
 
   .product_container {
     display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
 
     .product_left {
       height: 50vh;

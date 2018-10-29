@@ -1,0 +1,24 @@
+.parent_div {
+  height: 100vh;
+  border: 1px dashed yellow;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .vert-align {
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: 2em;
+    }
+    .wiz-btn {
+      margin-top: 4%;
+    }
+  }
+}

@@ -9,11 +9,11 @@ class Dashboard extends Component {
       <div className="dash_main">
         <Navbar />
         <div className="product_container">
-          <Link to="">
-            <div className="product_left">DRIVERS LICENSE</div>
+          <Link to="/DL1">
+            <div className="product_left">DRIVERS LICENSE / ID CARD</div>
           </Link>
-          <Link to="">
-            <div className="product_right">REGISTRATION</div>
+          <Link to="/RG1">
+            <div className="product_right"> VEHICLE REGISTRATION</div>
           </Link>
         </div>
       </div>

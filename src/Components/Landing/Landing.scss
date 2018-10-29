@@ -3,19 +3,19 @@ $zoomie-slate: rgb(41, 40, 38);
 $zoomie_grey: rgb(119, 111, 111);
 
 .landing_gif {
-  height: 35vh;
+  height: 30vh;
   background: lightgoldenrodyellow;
   border: 1.5px dashed red;
 }
 
 .landing_container {
-  height: 75vh;
+  height: 70vh;
   display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
   h1 {
     color: $zoomie-teal;
     font-size: 3em;
@@ -29,6 +29,7 @@ $zoomie_grey: rgb(119, 111, 111);
   button {
     color: white;
     background: $zoomie-teal;
-    font-size: 1.3em;
+    font-size: 1.1em;
+    border-radius: 12px;
   }
 }
