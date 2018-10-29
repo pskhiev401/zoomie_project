@@ -44,9 +44,33 @@ table {
 }
 
 //SCSS STYLING THROUGHOUT THE PROJECT FROM THIS POINT
-$zoomie-slate:rgb(79, 78, 76);
+$zoomie-teal:#57ccd1;
+$zoomie-slate:#4f4e4c;
+$zoomie_grey:#776f6f;
 .App {
 	background:$zoomie-slate;
+	
+	p{
+		color: white;
+	}
+
+	button {
+		color: white;
+    background: $zoomie-teal;
+    font-size: 1.1em;
+		border-radius: 12px;
+		border: #4f4e4c;
+	}
+
+	h1 {
+    color: $zoomie-teal;
+    font-size: 3em;
+  }
+
+  h3 {
+    color: $zoomie_grey;
+    font-size: 1.3em;
+  }
 }
 
 

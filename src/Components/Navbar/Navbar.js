@@ -6,13 +6,11 @@ class Navbar extends Component {
   render() {
     return (
       <div className="Navbar_container">
-        <Link to="/"><div className="nav_left">Zoomie</div></Link>
+      <Link to="/"><p>Zoomie</p></Link>
         <div className="nav_right">
-          <div>Login</div>
-          <Link to="/dashboard">
-            <div>Dashboard</div>
-          </Link>
-          <div>SignOut</div>
+          <p>Login</p>
+          <Link to="/dashboard"><p>Dashboard</p></Link>
+          <p>SignOut</p>
         </div>
       </div>
     );

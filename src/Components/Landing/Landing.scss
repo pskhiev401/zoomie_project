@@ -1,5 +1,4 @@
 $zoomie-teal: rgb(79, 173, 177);
-$zoomie-slate: rgb(41, 40, 38);
 $zoomie_grey: rgb(119, 111, 111);
 
 .landing_gif {
@@ -15,21 +14,4 @@ $zoomie_grey: rgb(119, 111, 111);
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-
-  h1 {
-    color: $zoomie-teal;
-    font-size: 3em;
-  }
-
-  h3 {
-    color: $zoomie_grey;
-    font-size: 1.3em;
-  }
-
-  button {
-    color: white;
-    background: $zoomie-teal;
-    font-size: 1.1em;
-    border-radius: 12px;
-  }
 }

@@ -1,5 +1,8 @@
 .Navbar_container {
-  justify-content: space-around;
-  border: 2px dashed yellow;
+  border: 1.5px dashed yellow;
   color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
 }
