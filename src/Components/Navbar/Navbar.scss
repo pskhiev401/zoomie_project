@@ -1,8 +1,36 @@
+$zoomie_teal: #57ccd1;
+$zoomie_yellowtail: "Yellowtail", cursive;
+
 .Navbar_container {
-  border: 1.5px dashed yellow;
+  height: 10vh;
   color: white;
   display: flex;
-  flex-direction: column;
   flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  // margin: 3%;
 
+  p {
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav_left {
+    p{
+    // font-family: $zoomie_yellowtail;
+    // color: $zoomie_teal;
+    // font-size: 2em;
+    // text-shadow: 2px 2px 4px #000000;
+    
+
+    }
+  }
+
+  .nav_right {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+  }
 }
