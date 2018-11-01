@@ -1,74 +1,68 @@
 import React, { Component } from "react";
 import "./DL3.scss";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { handleChange } from "../../../ducks/dlReducer";
+
 
 class DL3 extends Component {
+  // submitDLForm() {
+  //   const { sex, hair, eyes, height } = this.props;
+  //   axios.post("/api/dlform", { sex, hair, eyes, height });
+  // }
   render() {
-    const {
-      updateFirstName,
-      updateLastName,
-      updateBirthMonth,
-      updateAddress1,
-      updateAddress2,
-      updateCity,
-      updateState,
-      updateZipcode
-    } = this.props;
     return (
-      <div className="parent_div">
-        <div className="left_align">
-          <p>Personal Deets</p>
-          <input
-            required
-            placeholder="First Name"
-            type="text"
-            onChange={e => updateFirstName(e.target.value)}/>
-          <input
-            required
-            placeholder="Last Name"
-            type="text"
-            onChange={e => updateLastName(e.target.value)}
-          />
-          
-          <p>DOB</p>
-          <input
-            required
-            type="date"
-            onChange={e => updateBirthMonth(e.target.value)}
-          />
-          <p>Mailing Address</p>
-          <input
-            placeholder="Address Line 1"
-            type="text"
-            onChange={e => updateAddress1(e.target.value)}
-          />
-          <input
-            placeholder="Address Line 2"
-            type="text"
-            onChange={e => updateAddress2(e.target.value)}
-          />
-          <input
-            placeholder="City"
-            type="text"
-            onChange={e => updateCity(e.target.value)}
-          />
-          <input
-            placeholder="State"
-            type="text"
-            onChange={e => updateState(e.target.value)}
-          />
-          <input
-            placeholder="Zipcode"
-            type="number"
-            onChange={e => updateZipcode(e.target.value)}
-          />
-          <Link to="/DL2">
-            <button className="wiz-btn"> Next </button>
-          </Link>
+      <div className="dl3_main">
+        <div>
+          SEX
+          <select name="sex" onChange={e => this.props.handleChange(e)}>
+            <option value="">Select</option>
+            <option value="m">Male</option>
+            <option value="f">Female</option>
+          </select>
         </div>
+        <div>
+          HAIR
+          <input
+            name="hair"
+            type="text"
+            onChange={e => this.props.handleChange(e)}
+          />
+        </div>
+        <div>
+          EYES
+          <input
+            name="eyes"
+            type="text"
+            onChange={e => this.props.handleChange(e)}
+          />
+        </div>
+        <div>
+          HEIGHT
+          <input
+            name="height"
+            type="text"
+            onChange={e => this.props.handleChange(e)}
+          />
+        </div>
+        <div>
+            WEIGHT
+            <input
+              name="weight"
+              type="number"
+              onChange={e => this.props.handleChange(e)}
+            />
+          </div>
+        <Link to="/dl4">
+          <button className="wiz-btn">Next</button>
+        </Link>
       </div>
     );
   }
 }
+const mapStateToProps = state => state;
 
-export default DL3;
+export default connect(
+  mapStateToProps,
+  { handleChange }
+)(DL3);

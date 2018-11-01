@@ -1,0 +1,11 @@
+.review_main{
+  height: 80vh;
+  width: 50vw;
+  background: lightseagreen;
+  display: flex;
+  .review_right, .review_left{
+    height: 100%;
+    width: 50%;
+    border: 1.5px dashed pink;
+  }
+}

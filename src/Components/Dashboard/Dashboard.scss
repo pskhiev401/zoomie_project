@@ -1,7 +1,7 @@
 .dash_main {
-  background: lightcyan;
+  // background: lightcyan;
   height: 90vh;
-  border: 1.8px dashed red;
+  // border: 1.8px dashed red;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
@@ -17,7 +17,6 @@
   .right_container {
     height: 80vh;
     width: 55vw;
-    // background: #eec06b;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,7 +24,7 @@
 
     .top_container {
       border-radius: 25px;
-      background: #ae48ae;
+      background: #8a868a;
       height: 45%;
       width: 100%;
       display: flex;
@@ -52,7 +51,7 @@
 
     .bottom_container {
       border-radius: 25px;
-      background: #86c964;
+      background: #8a868a;
       height: 45%;
       width: 100%;
       display: flex;
