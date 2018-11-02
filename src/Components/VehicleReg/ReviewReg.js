@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import "./ReviewReg.scss";
+import {Link} from 'react-router-dom';
+import { connect } from "react-redux";
+import { handleChange } from "../../ducks/regReducer";
+import axios from "axios";
 
 class ReviewReg extends Component {
   render() {
     return (
-      <div className="vehicle_reg_main">
+      <div className="reg_main">
         <div>
             First Name
             <input
@@ -65,18 +69,66 @@ class ReviewReg extends Component {
             />
           </div>
           <div>
-            Voter Registration
-            <select name="voter_reg" onChange={e => this.props.handleChange(e)}>
+            Vehicle Type
+            <select name="vehicle_type" onChange={e => this.props.handleChange(e)}>
               <option value="">Select</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value="auto">auto</option>
+              <option value="commerical">commerical</option>
+              <option value="motorcycle">motorcycle</option>
             </select>
-            
           </div>
-
+          <div>
+            Vehicle Year
+            <input
+              name="year"
+              type="number"
+              onChange={e => this.props.handleChange(e)}
+            />
+          </div>
+          <div>
+            Vehicle Make
+            <input
+              name="make"
+              type="text"
+              onChange={e => this.props.handleChange(e)}
+            />
+          </div>
+          <div>
+            Vehicle Model
+            <input
+              name="model"
+              type="text"
+              onChange={e => this.props.handleChange(e)}
+            />
+          </div>
+          <div>
+            Vin
+            <input
+              name="vin"
+              type="number"
+              onChange={e => this.props.handleChange(e)}
+            />
+          </div>
+          <div>
+            License Plate
+            <input
+              name="lic_plate"
+              type="number"
+              onChange={e => this.props.handleChange(e)}
+            />
+          </div>
+          <Link to="/">
+          <button onClick={() => this.props.submitDLForm()}className="wiz-btn">Sumbit</button>
+        </Link>
       </div>
     );
   }
 }
 
-export default ReviewReg;
+const mapStateToProps = state => state;
+
+export default connect(
+  mapStateToProps,
+  { handleChange }
+)(ReviewReg);
+

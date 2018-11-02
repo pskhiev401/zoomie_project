@@ -34,15 +34,16 @@ export function handleChange(input){
   }
 }
 
-export function submitDLForm(){
-  console.log()
+export function submitDLForm(e){
+  // console.log()
   return{
     type: SEND_DL_FORM,
-    payload: axios.post('/api/dlform')
+    payload: axios.post('/api/dlform', {e})
   }
 }
 
 export default function dlReducer(state = initialState, action){
+  console.log(initialState)
   switch(action.type){
     case UPDATE_DL_FORM:
       return{...state, [action.payload.target.name]:action.payload.target.value};

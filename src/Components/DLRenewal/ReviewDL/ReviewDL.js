@@ -3,6 +3,7 @@ import "./ReviewDL.scss";
 import { connect } from "react-redux";
 import { handleChange } from "../../../ducks/dlReducer";
 import axios from "axios";
+import {Link} from 'react-router-dom';
 
 class ReviewDL extends Component {
   constructor() {
@@ -30,8 +31,7 @@ class ReviewDL extends Component {
     };
   }
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   submitDLForm() {
     const {
@@ -81,36 +81,34 @@ class ReviewDL extends Component {
   }
 
   render() {
-
-
     console.log(this.props);
     return (
       <div className="review_main">
         <div className="review_left">
-            <div>
-              {/* <p> loading {displayUserInfo} </p> */}
-              <p>{this.props.first_name}</p>
-              <p>{this.props.last_name}</p>
-              <p>{this.props.dob}</p>
-              <p>{this.props.sex}</p>
-              <p>{this.props.ssn}</p>
-              <p>{this.props.hair}</p>
-              <p>{this.props.eyes}</p>
-              <p>{this.props.height}</p>
-              <p>{this.props.weight}</p>
-              <p>{this.props.address_1}</p>
-              <p>{this.props.address_2}</p>
-              <p>{this.props.city}</p>
-              <p>{this.props.state}</p>
-              <p>{this.props.zipcode}</p>
-              <p>{this.props.dl_type}</p>
-              <p>{this.props.dl_class}</p>
-              <p>{this.props.dl_exp}</p>
-              <p>{this.props.dl_num}</p>
-              <p>{this.props.organ_donor}</p>
-              <p>{this.props.voter_reg}</p>
-            </div>
-              <button onClick={() => this.submitDLForm()}>Submit</button>
+          <div>
+            {/* <p> loading {displayUserInfo} </p> */}
+            <p>{this.props.first_name}</p>
+            <p>{this.props.last_name}</p>
+            <p>{this.props.dob}</p>
+            <p>{this.props.sex}</p>
+            <p>{this.props.ssn}</p>
+            <p>{this.props.hair}</p>
+            <p>{this.props.eyes}</p>
+            <p>{this.props.height}</p>
+            <p>{this.props.weight}</p>
+            <p>{this.props.address_1}</p>
+            <p>{this.props.address_2}</p>
+            <p>{this.props.city}</p>
+            <p>{this.props.state}</p>
+            <p>{this.props.zipcode}</p>
+            <p>{this.props.dl_type}</p>
+            <p>{this.props.dl_class}</p>
+            <p>{this.props.dl_exp}</p>
+            <p>{this.props.dl_num}</p>
+            <p>{this.props.organ_donor}</p>
+            <p>{this.props.voter_reg}</p>
+          </div>
+          <button onClick={() => this.submitDLForm()}>Submit</button>
         </div>
         <div className="review_right">
           <div>
@@ -265,7 +263,10 @@ class ReviewDL extends Component {
           </div>
           <div>
             Organ Donor
-            <select name="organ_donor" onChange={e => this.props.handleChange(e)}>
+            <select
+              name="organ_donor"
+              onChange={e => this.props.handleChange(e)}
+            >
               <option value="">Select</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -278,12 +279,14 @@ class ReviewDL extends Component {
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
-            
           </div>
-          <button onClick={() => this.submitDLForm()}>Submit</button>
-          make this whole form conditionally render with modal
+          <Link to="/">
+            <button >Submit</button>
+          </Link>
+          make a put another submit handler?
         </div>
-      </div>);
+      </div>
+    );
   }
 }
 const mapStateToProps = state => state;

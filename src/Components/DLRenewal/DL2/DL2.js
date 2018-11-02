@@ -3,24 +3,9 @@ import "./DL2.scss";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleChange } from "../../../ducks/dlReducer";
-// import axios from "axios";
+
 
 class DL2 extends Component {
-
-  // submitDLForm() {
-  //   const {
-  //     first_name,
-  //     last_name,
-  //     dob,
-  //     ssn
-  //   } = this.props;
-  //   axios.post("/api/dlform", {
-  //     first_name,
-  //     last_name,
-  //     dob,
-  //     ssn
-  //   });
-  // }
 
   render() {
     return (

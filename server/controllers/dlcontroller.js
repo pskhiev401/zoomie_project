@@ -35,7 +35,7 @@ module.exports = {
       weight,
       organ_donor,
       voter_reg
-    } = req.body;
+    } = req.body.e;
 
     db.submit_dl([
       first_name,

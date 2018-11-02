@@ -12,11 +12,7 @@ class DL1 extends Component {
       userinput: ""
     };
   }
-  // submitDLForm() {
-  //   const { dl_type, dl_class, dl_exp, dl_num } = this.props;
-  //   axios.post("/api/dlform", { dl_type, dl_class, dl_exp, dl_num });
-  // }
-
+  
   render() {
     return (
       <div className="dl1_main">

@@ -2,32 +2,39 @@ import React, { Component } from "react";
 import "./DL4.scss";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { handleChange } from "../../../ducks/dlReducer";
+import { handleChange, submitDLForm } from "../../../ducks/dlReducer";
 import axios from "axios";
 
 class DL4 extends Component {
-  submitDLForm() {
-    const {
-      address_1,
-      address_2,
-      city,
-      state,
-      zipcode,
-      organ_donor,
-      voter_reg
-    } = this.props;
-    axios.post("/api/dlform", {
-      address_1,
-      address_2,
-      city,
-      state,
-      zipcode,
-      organ_donor,
-      voter_reg
-    });
-  }
+  // submitDLForm() {
+  //   const {
+  //     address_1,
+  //     address_2,
+  //     city,
+  //     state,
+  //     zipcode,
+  //     organ_donor,
+  //     voter_reg
+  //   } = this.props;
+  //   axios.post("/api/dlform", {
+  //     address_1,
+  //     address_2,
+  //     city,
+  //     state,
+  //     zipcode,
+  //     organ_donor,
+  //     voter_reg
+  //   });
+  // }
+
+  // Capt Hindsight: we added an extra layer of complexity by moving our post method inside redux, below is how we could simply the post by leaving here. e is what we called in the reducer file, therefore we need to user it here.
+
+  // sumbitDLForm = () => {
+  //   axios.post('URL', {e: this.props})
+  // }
 
   render() {
+    console.log(this.props)
     return (
       <div className='dl4_main'>
         <div>
@@ -88,7 +95,7 @@ class DL4 extends Component {
             <option value="no">No</option>
           </select>
           <Link to="reviewdl">
-            <button className="wiz-btn"> Next </button>
+            <button onClick={() => this.props.submitDLForm(this.props)} className="wiz-btn"> Next </button>
           </Link>
         </div>
       </div>
@@ -100,7 +107,7 @@ const mapStateToProps = state => state;
 
 export default connect(
   mapStateToProps,
-  { handleChange }
+  { handleChange, submitDLForm }
 )(DL4); 
 
 

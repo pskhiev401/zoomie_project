@@ -6,10 +6,7 @@ import { handleChange } from "../../../ducks/dlReducer";
 
 
 class DL3 extends Component {
-  // submitDLForm() {
-  //   const { sex, hair, eyes, height } = this.props;
-  //   axios.post("/api/dlform", { sex, hair, eyes, height });
-  // }
+
   render() {
     return (
       <div className="dl3_main">
