@@ -37,8 +37,8 @@ class DL1 extends Component {
           DL Class
           <select name="dl_class" onChange={e => this.props.handleChange(e)}>
             <option value="">Select</option>
-            <option value="c">Class C</option>
-            <option value="m1">Motocycle</option>
+            <option value="C">Class C</option>
+            <option value="M1">Motocycle</option>
           </select>
         </div>
         <div>

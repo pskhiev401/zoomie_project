@@ -3,7 +3,7 @@ import "./DL4.scss";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleChange, submitDLForm } from "../../../ducks/dlReducer";
-import axios from "axios";
+// import axios from "axios";
 
 class DL4 extends Component {
   // submitDLForm() {
@@ -94,7 +94,7 @@ class DL4 extends Component {
             <option value="yes">Yes</option>
             <option value="no">No</option>
           </select>
-          <Link to="reviewdl">
+          <Link to="/reviewdl">
             <button onClick={() => this.props.submitDLForm(this.props)} className="wiz-btn"> Next </button>
           </Link>
         </div>
