@@ -41,7 +41,7 @@ massive(process.env.CONNECTION_STRING)
   .catch(err => console.log(err));
 
 // *** ENDPOINTS *****
-// app.get('/api/getUserData', getDataAfterLogin)
+app.get('/api/getUserData', getDataAfterLogin)
 app.post("/api/dlform", submitDL);
 app.get("/api/getdlform", getCompletedDlForm);
 app.put("/api/finalDL/:id", finalDLsubmit);

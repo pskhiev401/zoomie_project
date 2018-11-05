@@ -4,15 +4,17 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleChange } from "../../../ducks/dlReducer";
 
-
 class DL3 extends Component {
-
   render() {
     return (
       <div className="dl3_main">
         <div>
           SEX
-          <select name="sex" onChange={e => this.props.handleChange(e)}>
+          <select
+            name="sex"
+            onChange={e => this.props.handleChange(e)}
+            defaultValue={this.props.sex}
+          >
             <option value="">Select</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -22,6 +24,7 @@ class DL3 extends Component {
           HAIR
           <input
             name="hair"
+            defaultValue={this.props.hair}
             type="text"
             onChange={e => this.props.handleChange(e)}
           />
@@ -30,6 +33,7 @@ class DL3 extends Component {
           EYES
           <input
             name="eyes"
+            defaultValue={this.props.eyes}
             type="text"
             onChange={e => this.props.handleChange(e)}
           />
@@ -38,18 +42,20 @@ class DL3 extends Component {
           HEIGHT
           <input
             name="height"
+            defaultValue={this.props.height}
             type="text"
             onChange={e => this.props.handleChange(e)}
           />
         </div>
         <div>
-            WEIGHT
-            <input
-              name="weight"
-              type="number"
-              onChange={e => this.props.handleChange(e)}
-            />
-          </div>
+          WEIGHT
+          <input
+            name="weight"
+            defaultValue={this.props.weight}
+            type="number"
+            onChange={e => this.props.handleChange(e)}
+          />
+        </div>
         <Link to="/dl4">
           <button className="wiz-btn">Next</button>
         </Link>

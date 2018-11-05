@@ -1,12 +1,11 @@
 module.exports = {
   getDataAfterLogin: (req, res, next) => {
-    // const db = req.app.get("db");
-    // const {first_name, last_name} = req.body;
-    // db.get_user_info([first_name, last_name])
-    //   .then(response => {
-    //     res.status(200).json(response);
-    //   })
-    //   .catch(err => res.status(500).send(err));
+    const db = req.app.get("db");
+    db.get_user_info(req.user.user_id)
+      .then(response => {
+        res.status(200).json(response);
+      })
+      .catch(err => res.status(500).send(err));
   },
 
   submitDL: (req, res, next) => {
@@ -81,7 +80,6 @@ module.exports = {
     const db = req.app.get('db');
     console.log(req.body)
     console.log(req.params)
-    const { id } = req.params;
     const {
       first_name,
       last_name,
@@ -102,9 +100,11 @@ module.exports = {
       height,
       weight,
       organ_donor,
-      voter_reg
+      voter_reg,
+      user_email
     } = req.body; 
     db.final_dl_submit([
+      req.params.id,
       first_name,
       last_name,
       dob,
@@ -124,10 +124,11 @@ module.exports = {
       height,
       weight,
       organ_donor,
-      voter_reg
+      voter_reg,
+      user_email
     ])
       .then(response => {
-        console.log("test", response);
+        console.log("PUT successful", response);
         res.status(200).json(response);
       })
       .catch(err => {
