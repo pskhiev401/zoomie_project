@@ -11,7 +11,7 @@ const authCtrl = require("./controllers/authcontroller");
 const passport = require("passport");
 
 const {
-  getAll,
+  getDataAfterLogin,
   submitDL,
   getCompletedDlForm,
   finalDLsubmit
@@ -41,7 +41,7 @@ massive(process.env.CONNECTION_STRING)
   .catch(err => console.log(err));
 
 // *** ENDPOINTS *****
-// app.get("/api/test", getAll)
+// app.get('/api/getUserData', getDataAfterLogin)
 app.post("/api/dlform", submitDL);
 app.get("/api/getdlform", getCompletedDlForm);
 app.put("/api/finalDL/:id", finalDLsubmit);

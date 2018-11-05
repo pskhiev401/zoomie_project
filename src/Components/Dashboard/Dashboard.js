@@ -4,10 +4,18 @@ import { Link } from "react-router-dom";
 // import Navbar from "../Navbar/Navbar";
 
 class Dashboard extends Component {
+  constructor(){
+    super();
+    this.state={}
+  }
 
   // componentDidMount(){
-  //   this.getUserInfo()
+    
+  // axios.get('/api/getUserData').then(
+    //console.log()
+  // this.props.getUserInfo())
   // }
+  // update reducer with user data as payload ?
   render() {
     console.log(window)
     return (

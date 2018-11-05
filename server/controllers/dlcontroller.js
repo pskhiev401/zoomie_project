@@ -1,11 +1,12 @@
 module.exports = {
-  getAll: (req, res, next) => {
-    const db = req.app.get("db");
-    db.get_all()
-      .then(response => {
-        res.status(200).json(response);
-      })
-      .catch(err => res.status(500).send(err));
+  getDataAfterLogin: (req, res, next) => {
+    // const db = req.app.get("db");
+    // const {first_name, last_name} = req.body;
+    // db.get_user_info([first_name, last_name])
+    //   .then(response => {
+    //     res.status(200).json(response);
+    //   })
+    //   .catch(err => res.status(500).send(err));
   },
 
   submitDL: (req, res, next) => {

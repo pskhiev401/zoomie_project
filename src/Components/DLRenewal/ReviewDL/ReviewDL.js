@@ -188,8 +188,8 @@ class ReviewDL extends Component {
                 defaultValue={this.state.sex}
               >
                 <option value="">Select</option>
-                <option value="m">Male</option>
-                <option value="f">Female</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
               </select>
             </div>
             <div>

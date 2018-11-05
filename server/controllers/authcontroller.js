@@ -21,10 +21,11 @@ module.exports = app => {
   );
 
   passport.serializeUser((profile, done) => {
+    // console.log(profile._json)
     const db = app.get("db");
     db.get_authid(profile.id).then(user => {
       if (!user[0]) {
-        db.add_auth_id(profile.id)
+        db.add_auth_id([profile.id, profile.name.givenName, profile.name.familyName, profile._json.email, profile.gender])
           .then(response => {
             console.log(response);
             return done(null, response[0]);

@@ -2,11 +2,10 @@ import axios from "axios";
 
 const BUILD_DL_FORM = "BUILD_DL_FORM";
 const SEND_DL_FORM="SEND_DL_FORM";
-// const GET_AUTH_ID="GET_AUTH_ID";
+// const GET_USER_INFO="GET_USER_INFO";
 
 
 const initialState = {
-  // auth_id: "",
   first_name: "",
   last_name: "",
   dob: "",
@@ -45,10 +44,10 @@ export function submitDLForm(e){
   }
 }
 
-// export function getUserAuthId(auth_id){
+// export function getUserInfo (userdata){
 //   return {
-//     type: GET_AUTH_ID,
-//     payload: axios.get('/api/getAuthID', {auth_id})
+//     type: GET_USER_INFO,
+//     payload: userdata
 //   }
 // }
 
@@ -58,8 +57,8 @@ export default function dlReducer(state = initialState, action){
   switch(action.type){
     case BUILD_DL_FORM:
       return{...state, [action.payload.target.name]:action.payload.target.value};
-    // case GET_AUTH_ID:
-    //   return{...state, auth_id:auth_id}
+    // case GET_USER_INFO:
+    // return{...state, [first_name:first_name, last_name:last_name]}
     case SEND_DL_FORM:
     return {...state}
     default:
