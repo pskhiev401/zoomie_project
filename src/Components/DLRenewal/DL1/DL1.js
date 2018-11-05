@@ -12,6 +12,10 @@ class DL1 extends Component {
       userinput: ""
     };
   }
+
+  // componentDidMount(){
+  //   this.props.getUserAuthId()
+  // }
   
   render() {
     return (

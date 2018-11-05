@@ -6,32 +6,7 @@ import { handleChange, submitDLForm } from "../../../ducks/dlReducer";
 // import axios from "axios";
 
 class DL4 extends Component {
-  // submitDLForm() {
-  //   const {
-  //     address_1,
-  //     address_2,
-  //     city,
-  //     state,
-  //     zipcode,
-  //     organ_donor,
-  //     voter_reg
-  //   } = this.props;
-  //   axios.post("/api/dlform", {
-  //     address_1,
-  //     address_2,
-  //     city,
-  //     state,
-  //     zipcode,
-  //     organ_donor,
-  //     voter_reg
-  //   });
-  // }
-
-  // Capt Hindsight: we added an extra layer of complexity by moving our post method inside redux, below is how we could simply the post by leaving here. e is what we called in the reducer file, therefore we need to user it here.
-
-  // sumbitDLForm = () => {
-  //   axios.post('URL', {e: this.props})
-  // }
+// Capt Hindsight: we added an extra layer of complexity by moving our post method inside redux, below is how we could simply the post by leaving here. e is what we called in the reducer file, therefore we need to user it here.
 
   render() {
     console.log(this.props)

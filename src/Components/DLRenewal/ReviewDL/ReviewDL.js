@@ -12,7 +12,6 @@ class ReviewDL extends Component {
     super();
     this.state = {
       formData: [],
-      id: "",
       first_name: "",
       last_name: "",
       dob: "",
@@ -46,7 +45,6 @@ class ReviewDL extends Component {
 
   stateFiller() {
     const {
-      id,
       first_name,
       last_name,
       dob,
@@ -69,7 +67,6 @@ class ReviewDL extends Component {
       voter_reg
     } = this.state.formData[0];
     this.setState({
-      id: id,
       first_name: first_name,
       last_name: last_name,
       dob: dob,
@@ -125,7 +122,6 @@ class ReviewDL extends Component {
     console.log(this.state.formData);
     axios
       .put(`/api/finalDL/${id}`, { 
-        id: id,
         first_name: first_name,
         last_name: last_name,
         dob: dob,

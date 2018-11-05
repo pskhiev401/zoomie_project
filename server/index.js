@@ -2,10 +2,13 @@ require("dotenv").config();
 // **** IMPORT DEPENDENCIES *****
 const express = require("express");
 const app = express();
+const session = require("express-session");
 const { json } = require("body-parser");
 const port = process.env.PORT || 3001;
 const massive = require("massive");
 const cors = require("cors");
+const authCtrl = require("./controllers/authcontroller");
+const passport = require("passport");
 
 const {
   getAll,
@@ -16,6 +19,20 @@ const {
 
 app.use(json());
 app.use(cors());
+app.use(
+  session({
+    resave: false,
+    saveUninitialized: true,
+    secret: process.env.SESSION_SECRET,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 7
+    }
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 massive(process.env.CONNECTION_STRING)
   .then(dbInstance => {
@@ -28,6 +45,8 @@ massive(process.env.CONNECTION_STRING)
 app.post("/api/dlform", submitDL);
 app.get("/api/getdlform", getCompletedDlForm);
 app.put("/api/finalDL/:id", finalDLsubmit);
+
+authCtrl(app);
 
 app.listen(port, () => {
   console.log(`BEEP Listening on port ${port}`);

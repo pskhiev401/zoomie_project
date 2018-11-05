@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import "./Landing.scss";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class Landing extends Component {
+  redirect(){
+    window.location.href= `${process.env.REACT_APP_SERVER}/login`
+  }
   render() {
     return (
         <div className="landing_img" >
@@ -10,9 +13,7 @@ class Landing extends Component {
         <div className="landing_container" >
           <h1>Zoomie</h1> <br />
           <h3>stop wasting time</h3> <br />
-          <Link to="/dashboard">
-            <button>START</button>
-          </Link>
+            <button onClick={() => this.redirect() }>START</button>
         </div>
       </div>
     );

@@ -10,7 +10,8 @@ module.exports = {
 
   submitDL: (req, res, next) => {
     const db = req.app.get("db");
-    console.log(req.body);
+    console.log('poop', req.user.user_id);
+    // console.log('session', req.session)
     const {
       first_name,
       last_name,
@@ -34,6 +35,7 @@ module.exports = {
       voter_reg} = req.body.e;
 
     db.submit_dl([
+      req.user.user_id,
       first_name,
       last_name,
       dob,
@@ -102,7 +104,6 @@ module.exports = {
       voter_reg
     } = req.body; 
     db.final_dl_submit([
-      id, 
       first_name,
       last_name,
       dob,

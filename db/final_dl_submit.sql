@@ -1,3 +1,3 @@
 UPDATE dl_form
-SET first_name = $2, last_name = $3, dob = $4, sex = $5, ssn = $6, dl_type = $7, dl_class = $8, dl_exp = $9, dl_num = $10, address_1 = $11, address_2 = $12, city = $13, state = $14, zipcode = $15, hair = $16, eyes = $17, height = $18, weight = $19, organ_donor = $20, voter_reg = $21
-WHERE id = $1;
+SET id = $2,first_name = $3, last_name = $4, dob = $5, sex = $6, ssn = $7, dl_type = $8, dl_class = $9, dl_exp = $10, dl_num = $11, address_1 = $12, address_2 = $13, city = $14, state = $15, zipcode = $16, hair = $17, eyes = $18, height = $19, weight = $20, organ_donor = $21, voter_reg = $22
+WHERE user_id = $1;

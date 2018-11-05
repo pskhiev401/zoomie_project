@@ -21,7 +21,7 @@ export default (
     <Route path="/dl2" component={DL2} />
     <Route path="/dl3" component={DL3} />
     <Route path="/dl4" component={DL4} />
-    <Route path="/reviewdl/:id" component={ReviewDL} />
+    <Route path="/reviewdl/" component={ReviewDL} />
     
     <Route path="/reviewReg" component={ReviewReg} />
   </Switch>

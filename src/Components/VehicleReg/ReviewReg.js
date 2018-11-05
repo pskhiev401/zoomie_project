@@ -3,7 +3,7 @@ import "./ReviewReg.scss";
 import {Link} from 'react-router-dom';
 import { connect } from "react-redux";
 import { handleChange } from "../../ducks/regReducer";
-import axios from "axios";
+// import axios from "axios";
 
 class ReviewReg extends Component {
   render() {

@@ -4,13 +4,17 @@ import { Link } from "react-router-dom";
 // import Navbar from "../Navbar/Navbar";
 
 class Dashboard extends Component {
+
+  // componentDidMount(){
+  //   this.getUserInfo()
+  // }
   render() {
+    console.log(window)
     return (
       <div className="dash_main">
         <img
           className="left_container"
-          src="https://images.unsplash.com/photo-1491331568367-82b3c8018969?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dce7511a4f5635eaf9f27c89d2a07970&auto=format&fit=crop&w=634&q=80" alt='Whooops This is Embarassing'
-        />
+          src="https://images.unsplash.com/photo-1491331568367-82b3c8018969?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dce7511a4f5635eaf9f27c89d2a07970&auto=format&fit=crop&w=634&q=80" alt='Whooops This is Embarassing'/>
         <div className="right_container">
           <div className="top_container">
             <div className="dl_top" />
