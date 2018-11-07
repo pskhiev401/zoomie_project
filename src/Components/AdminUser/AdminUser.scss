@@ -1,0 +1,24 @@
+.admin_main_container{
+  background: teal;
+  height: 90vh;
+  width: auto;
+  display: flex;
+
+  .admin_left{
+    min-width: 10%;
+    min-height: 100%;
+    background: #696666;
+  }
+
+  .admin_right{
+    width: 30%;
+    background: lightseagreen;
+    border: 1.2px dashed black;
+  }
+
+  // .pending_container
+  // .completed_container
+  // .charts_container
+
+
+}

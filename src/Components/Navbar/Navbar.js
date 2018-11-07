@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 class Navbar extends Component {
+  logoutRedirect = () => {
+    window.location.href = `${process.env.REACT_APP_CLIENT}/logout`;
+  };
+
   render() {
     return (
       <div className="Navbar_container">
@@ -13,8 +17,14 @@ class Navbar extends Component {
           </Link>
         </div>
 
+        <div className="nav_middle"> Middle </div>
+
         <div className="nav_right">
-          Welcome {this.props.first_name} {this.props.last_name}
+          <h2>
+            {this.props.first_name} {this.props.last_name}{" "}
+          </h2>
+          <h2 onClick={() => this.logoutRedirect()}>Logout</h2>
+          {/* logout button doesnt work yet */}
         </div>
       </div>
     );

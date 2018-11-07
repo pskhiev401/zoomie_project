@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./DLScan.scss";
 import FileBase64 from "react-file-base64";
 import axios from "axios";
-import UserSideNav from "../../UserSideNav/UserSideNav";
+import UserSideNav from "../../SideNav/Users/UserSideNav";
 // import microblink from 'microblink';
 
 class DLScan extends Component {

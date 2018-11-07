@@ -9,6 +9,7 @@ import DL2 from "./Components/DLRenewal/DL2/DL2";
 import DL3 from "./Components/DLRenewal/DL3/DL3";
 import DL4 from "./Components/DLRenewal/DL4/DL4";
 import ReviewDL from "./Components/DLRenewal/ReviewDL/ReviewDL";
+import AdminUser from "./Components/AdminUser/AdminUser";
 
 import ReviewReg from "./Components/VehicleReg/ReviewReg";
 
@@ -22,7 +23,9 @@ export default (
     <Route path="/dl3" component={DL3} />
     <Route path="/dl4" component={DL4} />
     <Route path="/reviewdl/" component={ReviewDL} />
-    
+    <Route path="/admin" component={AdminUser} />
+
     <Route path="/reviewReg" component={ReviewReg} />
+    <Route path="*" render={() => <img src="https://cdn-images-1.medium.com/max/1600/1*qdFdhbR00beEaIKDI_WDCw.gif" alt ='whooopies' />} />
   </Switch>
 );

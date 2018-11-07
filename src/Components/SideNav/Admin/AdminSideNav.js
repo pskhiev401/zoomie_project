@@ -1,17 +1,18 @@
 import React, { Component } from "react";
-import "./UserSideNav.scss";
+import "./AdminSideNav.scss";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 
-class UserSideNav extends Component {
+class AdminSideNav extends Component {
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className="main_side_container">
-        <Link to='/dashboard'><div>Dashboard</div></Link>
+        <Link to='/admin'><div>Admin Dashboard</div></Link>
         <div>Messages</div>
-        <div>Dashboard</div>
+        <div>Pending Orders</div>
+        <div>Completed Orders</div>
       </div>
     );
   }
@@ -19,4 +20,4 @@ class UserSideNav extends Component {
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps)(UserSideNav);
+export default connect(mapStateToProps)(AdminSideNav);

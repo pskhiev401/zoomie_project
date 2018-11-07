@@ -46,8 +46,8 @@ module.exports = app => {
     })
   );
 
-
-  app.get("/success", (req, res) => {
-    res.status(200).json(req, user);
-  });
+  // only used for testing 
+  // app.get("/success", (req, res) => {
+  //   res.status(200).json(req.user);
+  // });
 };
