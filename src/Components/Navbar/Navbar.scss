@@ -8,27 +8,28 @@ $zoomie_yellowtail: "Yellowtail", cursive;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  // margin: 3%;
+  
 
   p {
-    font-size: 1.2em;
+    // font-size: 1.2em;
     color: white;
     text-decoration: none;
   }
 
   .nav_left {
+    margin: 2%;
     p{
-    // font-family: $zoomie_yellowtail;
-    // color: $zoomie_teal;
-    // font-size: 2em;
-    // text-shadow: 2px 2px 4px #000000;
+    font-family: $zoomie_yellowtail;
+    color: $zoomie_teal;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px #000000;
     
-
     }
   }
 
   .nav_right {
-    width: 40%;
+    margin: 3.5%;
+    width: auto;
     display: flex;
     justify-content: space-around;
     text-decoration: none;

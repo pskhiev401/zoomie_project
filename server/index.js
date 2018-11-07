@@ -4,21 +4,30 @@ const express = require("express");
 const app = express();
 const session = require("express-session");
 const { json } = require("body-parser");
+const bodyParser = require("body-parser");
 const port = process.env.PORT || 3001;
 const massive = require("massive");
 const cors = require("cors");
 const authCtrl = require("./controllers/authcontroller");
 const passport = require("passport");
 
+const {scannedDL} = require('./controllers/dlScanController');
 const {
   getDataAfterLogin,
   submitDL,
   getCompletedDlForm,
   finalDLsubmit
-} = require("./controllers/dlcontroller");
+} = require("./controllers/dlController");
 
-app.use(json());
+
 app.use(cors());
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use(bodyParser.json());
+app.use(json());
+
+
+
 app.use(
   session({
     resave: false,
@@ -33,18 +42,20 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 massive(process.env.CONNECTION_STRING)
   .then(dbInstance => {
     app.set("db", dbInstance);
   })
   .catch(err => console.log(err));
 
-// *** ENDPOINTS *****
-app.get('/api/getUserData', getDataAfterLogin)
+// *** DL FORM ENDPOINTS *****
+app.get("/api/getUserData", getDataAfterLogin);
 app.post("/api/dlform", submitDL);
 app.get("/api/getdlform", getCompletedDlForm);
 app.put("/api/finalDL/:id", finalDLsubmit);
+
+// *** DL SCAN ENDPOINTS *****
+app.post('/api/dlscan', scannedDL )
 
 authCtrl(app);
 

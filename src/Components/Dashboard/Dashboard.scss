@@ -1,26 +1,28 @@
 .dash_main {
-  // background: lightcyan;
-  height: 90vh;
-  // border: 1.8px dashed red;
+  min-height: 90vh;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: stretch;
+  // align-items: center;
 
   .left_container {
-    height: 88vh;
-    width: auto;
-    border-radius: 25px;
+    min-width: 20%;
+    min-height: 100%;
+    background: rgb(105, 102, 102);
+  }
+
+  .empty_center {
+    min-width: 10%;
+    min-height: 100%;
   }
 
   .right_container {
-    height: 80vh;
-    width: 55vw;
+    min-height: 88vh;
+    min-width: 65%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: nowrap;
+    padding: 2%;
 
     .top_container {
       border-radius: 25px;
@@ -58,12 +60,12 @@
       flex-direction: column;
       justify-content: space-around;
 
-      .dl_top {
+      .bt_top {
         height: 50%;
         background: rgb(118, 118, 213);
       }
 
-      .dl_bottom {
+      .bt_bottom {
         height: 5vh;
         background: rgb(211, 219, 123);
 

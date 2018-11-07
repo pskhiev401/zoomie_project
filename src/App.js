@@ -9,12 +9,11 @@ import store from './ducks/store';
 
 class App extends Component {
   render() {
-    // console.log(window.location.pathname);
     return (
       <Provider store={store}>
         <BrowserRouter>
           <div className="App">
-            <div className="navbar_class">
+            <div >
               {window.location.pathname !== "/" && <Navbar />}
             </div>
             {routes}

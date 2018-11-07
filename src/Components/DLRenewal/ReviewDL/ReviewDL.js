@@ -12,12 +12,22 @@ class ReviewDL extends Component {
     return (
       <div className="review_main">
         <div className="review_right">
-          <div>
+          {/* <div>
             First Name
             <input
               name="first_name"
               defaultValue={this.props.first_name}
               type="text"
+              onChange={e => this.props.handleChange(e)}
+            />
+          </ div> */}
+
+          <div>
+            First Name
+            <input
+            contentEditable='true'
+              name="first_name"
+              defaultValue={this.props.first_name}
               onChange={e => this.props.handleChange(e)}
             />
           </div>
@@ -215,7 +225,7 @@ class ReviewDL extends Component {
           <button onClick={() => this.props.finalDLSubmit(this.props)}>
             Submit
           </button>
-          <Link to="/" />
+          <Link to="/dashboard" />
         </div>
       </div>
     );

@@ -3,11 +3,11 @@ import axios from "axios";
 const BUILD_DL_FORM = "BUILD_DL_FORM";
 const SEND_DL_FORM = "SEND_DL_FORM";
 const GET_USER_INFO = "GET_USER_INFO";
-const SEND_FINAL_DL="SEND_FINAL_DL";
+const SEND_FINAL_DL = "SEND_FINAL_DL";
 
 const initialState = {
-  //CAPT HINDSIGHT: WE SHOULD HAVE 
-  user_id:"",
+  //CAPT HINDSIGHT: WE SHOULD HAVE JUST USED REQ.USER.ID INSTEAD OF PASSING
+  user_id: "",
   first_name: "",
   last_name: "",
   dob: "",
@@ -47,11 +47,12 @@ export function submitDLForm(e) {
   };
 }
 
-export function finalDLSubmit(body){
-  console.log(body)
-  return {type: SEND_FINAL_DL,
-  payload: axios.put(`/api/finalDL/${body.user_id}`, {body})
-  }
+export function finalDLSubmit(body) {
+  console.log(body);
+  return {
+    type: SEND_FINAL_DL,
+    payload: axios.put(`/api/finalDL/${body.user_id}`, { body })
+  };
 }
 
 export function getUserInfo(userdata) {
@@ -63,7 +64,7 @@ export function getUserInfo(userdata) {
 }
 
 export default function dlReducer(state = initialState, action) {
-  // console.log(initialState)
+  console.log(initialState);
   switch (action.type) {
     case BUILD_DL_FORM:
       return {
@@ -74,7 +75,7 @@ export default function dlReducer(state = initialState, action) {
       console.log(action.payload);
       return {
         ...state,
-        user_id:action.payload.user_id,
+        user_id: action.payload.user_id,
         first_name: action.payload.first_name,
         last_name: action.payload.last_name,
         dob: action.payload.dob,
@@ -100,7 +101,8 @@ export default function dlReducer(state = initialState, action) {
     case SEND_DL_FORM:
       return { ...state };
     case `${SEND_FINAL_DL}_FULFILLED`:
-      return{...state};
+    console.log(action.payload)
+      return { ...state };
     default:
       return state;
   }

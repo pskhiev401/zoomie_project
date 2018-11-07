@@ -133,17 +133,16 @@ $zoomie_linen: #e1dede;
 
 .App {
   background: $zoomie_slate;
-  height: 100vh;
 
-  .navbar_class{
-    opacity: 0.4;
-    background-color: rgb(54, 52, 52); /* Black background color */
-    // position: fixed; /* Make it stick/fixed */
-    top: 0; /* Stay on top */
-    width: 100%; /* Full width */
-    transition: top 0.3s; /* Transition effect when sliding down (and up) */
+  // .navbar_class{
+  //   opacity: 0.4;
+  //   background-color: rgb(54, 52, 52); /* Black background color */
+  //   // position: fixed; /* Make it stick/fixed */
+  //   top: 0; /* Stay on top */
+  //   width: 100%; /* Full width */
+  //   transition: top 0.3s; /* Transition effect when sliding down (and up) */
     
-  }
+  // }
   
 
   button {
@@ -154,21 +153,4 @@ $zoomie_linen: #e1dede;
     border: #4f4e4c;
   }
 
-  // .parent_div {
-  //   height: 100vh;
-  //   border: 1px dashed red;
-  //   color: $zoomie_grey;
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-
-  //   .left_align {
-  //     height: 65%;
-  //     display: flex;
-  //     flex-direction: column;
-  //     justify-content: center;
-  //     align-items: center;
-
-  //   }
-  // }
 }

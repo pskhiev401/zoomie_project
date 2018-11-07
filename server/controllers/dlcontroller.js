@@ -77,6 +77,7 @@ module.exports = {
   },
 
   finalDLsubmit: (req, res, next) => {
+    console.log('corndog', req.params.id,);
     const db = req.app.get('db');
     console.log(req.body)
     console.log(req.params)

@@ -1,5 +1,40 @@
-.Scan_main{
-  height: 50vh;
-  width: 50vw;
-  background: teal;
+.scan_main {
+  min-height: 90vh;
+  min-width: auto;
+  background: rgb(119, 119, 119);
+  display: flex;
+
+  h1,
+  p,
+  h3 {
+    font-size: 2rem;
+  }
+
+  .left_container{
+    min-width: 20%;
+    min-height: 100%;
+  }
+
+  .scan_center {
+    min-height: 90vh;
+    width: 85%;
+    background: teal;
+    // margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2% 0 0 0;
+
+    .scan_button {
+      margin: auto;
+      // width: 5;
+    }
+  }
+
+  .img_box {
+    height: 35vh;
+    width: auto;
+    border-radius: 10px;
+  }
 }
+
