@@ -7,22 +7,21 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 class AdminUser extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state={
+    this.state = {
       // allOrders : [],
-      pendingOrders: [],
+      pendingOrders: []
       // completedOrders: []
-    }
+    };
   }
   componentDidMount() {
-    axios.get("/api/getUserData")
-    .then(res => {
+    axios.get("/api/getUserData").then(res => {
       console.log(res.data);
       this.props.getUserInfo(res.data[0]);
     });
 
-    // axios.get('/api/getPending').then(res => {
+    // axios.get('/api/getAllOrders').then(res => {
     //   console.log(res.data)
     //   this.setState({pendingOrders:res.data})
     // });
@@ -32,7 +31,7 @@ class AdminUser extends Component {
       <div className="admin_main_container">
         <div className="admin_left">
           <AdminSideNav />
-          {/* {this.props.user_id === "google-oauth2|114190772025020872558" ? <AdminSideNav/>: window.location.href = `${process.env.REACT_APP_CLIENT}/dashboard`} */}
+          {/* {this.props.auth_id === "google-oauth2|114190772025020872558" ? <AdminSideNav/>: window.location.href = `${process.env.REACT_APP_CLIENT}/dashboard`} */}
         </div>
         <div className="admin_right">
           <h1>Pending Snapshot</h1>

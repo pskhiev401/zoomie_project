@@ -4,9 +4,14 @@ import { connect } from "react-redux";
 import { handleChange, finalDLSubmit } from "../../../ducks/dlReducer";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import axios from "axios";
 // import ContentEditable from "react-contenteditable";
 
 class ReviewDL extends Component {
+
+  finalDLSubmit = (e) => {
+    axios.put(`/api/finalDL/${e.auth_id}`, { e })
+  }
   render() {
     console.log(this.props);
     return (
@@ -222,7 +227,11 @@ class ReviewDL extends Component {
               <option value="no">No</option>
             </select>
           </div>
-          <button onClick={() => this.props.finalDLSubmit(this.props)}>
+          <button 
+          // onClick={() => this.props.finalDLSubmit(this.props)}
+          onClick={() => this.finalDLSubmit(this.props)}
+          
+          >
             Submit
           </button>
           <Link to="/dashboard" />

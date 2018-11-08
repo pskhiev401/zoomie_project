@@ -3,11 +3,13 @@ import "./DL4.scss";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleChange, submitDLForm } from "../../../ducks/dlReducer";
-// import axios from "axios";
+import axios from "axios";
 
 class DL4 extends Component {
   // Capt Hindsight: we added an extra layer of complexity by moving our post method inside redux, below is how we could simply the post by leaving here. e is what we called in the reducer file, therefore we need to user it here.
-
+submitDLForm = (e) => {
+  axios.post('/api/dlform', {e})
+}
   render() {
     console.log(this.props);
     return (
@@ -85,7 +87,9 @@ class DL4 extends Component {
         </div>
         <Link to="/reviewdl">
           <button
-            onClick={() => this.props.submitDLForm(this.props)}
+            // onClick={() => this.props.submitDLForm(this.props)}
+            onClick={() => this.submitDLForm(this.props)}
+
             className="wiz-btn"
           >
             {" "}

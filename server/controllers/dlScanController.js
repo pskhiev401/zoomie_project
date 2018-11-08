@@ -4,7 +4,7 @@ const axios = require("axios");
 module.exports = {
   scannedDL: (req, res, next) => {
     // console.log(process.env.MB_TOKEN)
-    // console.log("google id", req.user.user_id);
+    // console.log("google id", req.user.auth_id);
     console.log(req.body);
     const db = req.app.get("db");
     const { base64 } = req.body;

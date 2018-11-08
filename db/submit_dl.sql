@@ -1,3 +1,2 @@
-UPDATE dl_form
-SET first_name = $2, last_name = $3, dob = $4, sex = $5, ssn = $6, dl_type = $7, dl_class = $8, dl_exp = $9, dl_num = $10, address_1 = $11, address_2 = $12, city = $13, state = $14, zipcode = $15, hair = $16, eyes = $17, height = $18, weight = $19, organ_donor = $20, voter_reg = $21
-WHERE user_id = $1;
+INSERT INTO dl_form ( user_id, dob, ssn, dl_type, dl_class, dl_exp, dl_num, address_1, address_2, city, state, zipcode, hair, eyes, height, weight, organ_donor, voter_reg, status)
+VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, 'Pending')

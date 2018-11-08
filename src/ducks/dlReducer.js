@@ -6,8 +6,8 @@ const GET_USER_INFO = "GET_USER_INFO";
 const SEND_FINAL_DL = "SEND_FINAL_DL";
 
 const initialState = {
-  //CAPT HINDSIGHT: WE SHOULD HAVE JUST USED REQ.USER.ID INSTEAD OF PASSING
-  user_id: "",
+//CAPT HINDSIGHT: WE SHOULD HAVE JUST USED REQ.USER.ID INSTEAD OF PASSING IN auth_id
+  auth_id: "",
   first_name: "",
   last_name: "",
   dob: "",
@@ -51,7 +51,7 @@ export function finalDLSubmit(body) {
   console.log(body);
   return {
     type: SEND_FINAL_DL,
-    payload: axios.put(`/api/finalDL/${body.user_id}`, { body })
+    payload: axios.put(`/api/finalDL/${body.auth_id}`, { body })
   };
 }
 
@@ -75,7 +75,7 @@ export default function dlReducer(state = initialState, action) {
       console.log(action.payload);
       return {
         ...state,
-        user_id: action.payload.user_id,
+        auth_id: action.payload.auth_id,
         first_name: action.payload.first_name,
         last_name: action.payload.last_name,
         dob: action.payload.dob,
@@ -100,6 +100,7 @@ export default function dlReducer(state = initialState, action) {
       };
     case SEND_DL_FORM:
       return { ...state };
+    // WE DID NOT NEED PENDING/FULFILLED/REJECTED BC WE DID OUR AXIOS GET OUTSIDE THE REDUCER
     case `${SEND_FINAL_DL}_FULFILLED`:
     console.log(action.payload)
       return { ...state };

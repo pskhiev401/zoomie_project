@@ -19,7 +19,7 @@ class Dashboard extends Component {
     // console.log(this.props);
     return (
       <div>
-        {this.props.user_id === "google-oauth2|114190772025020872558" ? (
+        {this.props.auth_id === "google-oauth2|114190772025020872558" ? (
           <AdminUser />
         ) : (
           <CustomerUser />

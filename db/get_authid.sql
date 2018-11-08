@@ -1,3 +1,3 @@
 SELECT *
-FROM dl_form
-WHERE user_id = $1;
+FROM zoomies_users  
+WHERE auth_id = $1;
