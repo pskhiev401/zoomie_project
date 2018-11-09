@@ -9,7 +9,8 @@ class DLScan extends Component {
   constructor() {
     super();
     this.state = {
-      files: []
+      files: [],
+      blinkResponse: []
     };
   }
 
@@ -19,18 +20,23 @@ class DLScan extends Component {
 
   submitHandler = () => {
     // console.log(this.state.files[0].base64)
-    axios.post("/api/dlscan", { base64: this.state.files[0].base64 });
+
+    axios
+      .post("/api/dlscan", { base64: this.state.files[0].base64 })
+      .then(res => {
+        console.log(res.data);
+        this.setState({ blinkResponse: res.data });
+      });
   };
 
   render() {
     // console.log(this.state.files[0])
     return (
-    
       <div className="scan_main">
-          <div className="left_container">
-        <UserSideNav/>
+        <div className="left_container">
+          <UserSideNav />
         </div>
-        
+
         <div className="scan_center">
           <h1 className="text-center">Upload Drivers License</h1>
           <br />
@@ -66,7 +72,6 @@ class DLScan extends Component {
           ) : null}
         </div>
       </div>
-    
     );
   }
 }

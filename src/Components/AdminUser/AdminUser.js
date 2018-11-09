@@ -4,10 +4,9 @@ import AdminSideNav from "../SideNav/Admin/AdminSideNav";
 import { connect } from "react-redux";
 import dlReducer, { getUserInfo } from "../../ducks/dlReducer";
 import axios from "axios";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import ReactDOM from "react-dom";
 import Modal from "react-modal";
-import { EmailAddress } from "@sendgrid/helpers/classes";
 
 const customStyles = {
   content: {
@@ -20,7 +19,7 @@ const customStyles = {
   }
 };
 
-Modal.setAppElement(AdminUser);
+// Modal.setAppElement(AdminUser);
 
 class AdminUser extends Component {
   constructor() {
@@ -30,23 +29,23 @@ class AdminUser extends Component {
       completedOrders: [],
       pendingOrders: [],
       selectedObject: [],
-      emailMessage: '',
+      emailMessage: "",
       default_message:
-        "Schweeeeeet! Your order was received and being processed. We will send you another email when your order is fulfilled along with a tracking number!"
+        "Wow that was....EASY! You should receive your items in the mail within 3-4 business days!"
     };
 
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
+    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
   openModal(obj) {
     this.setState({ modalIsOpen: true, selectedObject: obj });
   }
 
-  afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = "#f000";
-  }
+  // afterOpenModal() {
+  //   // references are now sync'd and can be accessed.
+  //   this.subtitle.style.color = "#f000";
+  // }
 
   closeModal() {
     this.setState({ modalIsOpen: false });
@@ -68,14 +67,15 @@ class AdminUser extends Component {
     });
   }
 
-  sendEmail1 = (e) => {
+  sendEmail1 = e => {
     // axios call
     // through body,  selected object send EmailAddress, this.state.whatever you typed
-    // axios.post('"/api/sendEmail1"', {first: this.state.selectedObject, emailMessage: stuff })
-  }
+    // axios.post('"/api/sendEmail1"', {obj: this.state.selectedObject, emailMessage: this.state.default_message })
+  };
 
   render() {
     console.log(this.state.selectedObject);
+    console.log(this.state.default_message);
     let displayAllPending = this.state.pendingOrders.map((e, i) => {
       return (
         <div key={i} className="user_card">
@@ -109,15 +109,19 @@ class AdminUser extends Component {
             CUSTOMER: {first_name} {last_name}
           </h1>
           <h1>JOB STATUS: {status}</h1>
-          <h1>EMAIL: {user_email}</h1><br/>
-          <textarea
-            defaultValue={this.state.default_message}
-            maxlength={250}
-          />
+          <h1>EMAIL: {user_email}</h1>
           <br />
-        {status === 'Completed' && <button>Notify Customer</button>}
-  
-          <button>Complete Job</button>
+          {status === "Completed" && (
+            <textarea
+              defaultValue={this.state.default_message}
+              maxlength={250}
+              onChange={e => this.setState({ default_message: e.target.value })}
+            />
+          )}
+          <br />
+          {status === "Completed" && (<button onClick={() => this.submitHandler()}>Notify Customer</button>)}
+          {status === "Pending" && <button>Reviewed Completed</button>}
+          {status === "Completed" && <button>Job Completed</button>}
         </Modal>
         <div className="admin_left">
           <AdminSideNav />
