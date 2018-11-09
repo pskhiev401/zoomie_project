@@ -11,18 +11,25 @@ const cors = require("cors");
 const authCtrl = require("./controllers/authcontroller");
 const passport = require("passport");
 
-const {getDataAfterLogin,submitDL,getCompletedDlForm,finalDLsubmit} = require("./controllers/dlController");
-const {scannedDL} = require('./controllers/dlScanController');
-const {getAllOrders} = require('./controllers/admincontroller');
+const {
+  getDataAfterLogin,
+  submitDL,
+  getCompletedDlForm,
+  finalDLsubmit
+} = require("./controllers/dlController");
+const { scannedDL } = require("./controllers/dlScanController");
+const {
+  getAllPending,
+  getAllCompleted
+} = require("./controllers/admincontroller");
 
 app.use(cors());
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json());
 app.use(json());
 
-
-//**** SESSIONS ****** 
+//**** SESSIONS ******
 app.use(
   session({
     resave: false,
@@ -34,11 +41,9 @@ app.use(
   })
 );
 
-
 //*** PASSPORT ****
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 //***** CONNECTION TO DB *******
 massive(process.env.CONNECTION_STRING)
@@ -54,11 +59,11 @@ app.get("/api/getdlform", getCompletedDlForm);
 app.put("/api/finalDL/:id", finalDLsubmit);
 
 // ****** DL SCAN ENDPOINTS *****
-app.post('/api/dlscan', scannedDL )
+app.post("/api/dlscan", scannedDL);
 
 // ***** ADMIN SIDE ENDPOINTS *****
-app.get('/api/getAllOrders', getAllOrders)
-
+app.get("/api/getAllPending", getAllPending);
+app.get("/api/getAllCompleted", getAllCompleted);
 
 //***** AUTH0 CONTROLLER ****
 authCtrl(app);

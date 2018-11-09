@@ -17,16 +17,6 @@ class ReviewDL extends Component {
     return (
       <div className="review_main">
         <div className="review_right">
-          {/* <div>
-            First Name
-            <input
-              name="first_name"
-              defaultValue={this.props.first_name}
-              type="text"
-              onChange={e => this.props.handleChange(e)}
-            />
-          </ div> */}
-
           <div>
             First Name
             <input
@@ -229,9 +219,7 @@ class ReviewDL extends Component {
           </div>
           <button 
           // onClick={() => this.props.finalDLSubmit(this.props)}
-          onClick={() => this.finalDLSubmit(this.props)}
-          
-          >
+          onClick={() => this.finalDLSubmit(this.props)}>
             Submit
           </button>
           <Link to="/dashboard" />

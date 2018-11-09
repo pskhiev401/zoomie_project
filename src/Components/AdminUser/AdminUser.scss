@@ -1,24 +1,37 @@
-.admin_main_container{
+.admin_main_container {
   background: teal;
   height: 90vh;
   width: auto;
   display: flex;
 
-  .admin_left{
+  .pending_container {
+    margin: auto;
+    height: 95%;
+    width: 95%;
+    background: lightseagreen;
+    overflow: scroll;
+
+    .user_card{
+      display: flex;
+      padding: 1%;
+      h3{
+        font-size: 1.2em;
+      }
+    }
+  }
+  .admin_left {
     min-width: 10%;
     min-height: 100%;
     background: #696666;
   }
 
-  .admin_right{
+  .admin_right {
     width: 30%;
-    background: lightseagreen;
+    background: rgb(36, 150, 144);
     border: 1.2px dashed black;
   }
 
   // .pending_container
   // .completed_container
   // .charts_container
-
-
 }
