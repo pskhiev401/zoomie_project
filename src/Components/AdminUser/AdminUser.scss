@@ -5,6 +5,7 @@
   display: flex;
   margin: 1%;
 
+
   .pending_container {
     margin: auto;
     height: 95%;
@@ -43,7 +44,7 @@
     width: 30%;
     background: rgb(36, 150, 144);
     border: 1.2px dashed black;
-    h1{
+    h1 {
       font-size: 1.5em;
     }
   }
@@ -51,4 +52,29 @@
   // .pending_container
   // .completed_container
   // .charts_container
+}
+
+.ReactModal__Content--after-open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50% !important;
+  width: 50% !important;
+  
+
+  textarea{
+  height: 50% !important;
+  width: 75% !important;
+  border-radius: 3px;
+  }
+  button{
+    padding: 3%;
+    display: flex;
+    background: teal;
+    color: white;
+    font-size: .8em;
+    border-radius: 25px;
+
+  }
 }

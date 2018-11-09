@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Dashboard.scss";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
 import { getUserInfo } from "../../ducks/dlReducer";

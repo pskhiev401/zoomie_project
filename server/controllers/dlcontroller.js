@@ -78,7 +78,7 @@ module.exports = {
   finalDLsubmit: (req, res, next) => {
     // console.log("corndog", req.params.id);
     const db = req.app.get("db");
-    console.log('req.body>>>', req.body.e);
+    // console.log('req.body>>>', req.body.e);
     // console.log(req.params);
     const {
       first_name,
@@ -103,37 +103,37 @@ module.exports = {
       voter_reg,
       user_email
     } = req.body.e;
-    db.final_dl_submit([
-      req.params.id,
-      first_name,
-      last_name,
-      dob,
-      sex,
-      ssn,
-      dl_type,
-      dl_class,
-      dl_exp,
-      dl_num,
-      address_1,
-      address_2,
-      city,
-      state,
-      zipcode,
-      hair,
-      eyes,
-      height,
-      weight,
-      organ_donor,
-      voter_reg,
-      user_email
-    ])
-      .then(response => {
-        console.log("PUT successful", response);
-        res.status(200).json(response);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).send(err);
-      });
+    // db.final_dl_submit([
+    //   req.params.id,
+    //   first_name,
+    //   last_name,
+    //   dob,
+    //   sex,
+    //   ssn,
+    //   dl_type,
+    //   dl_class,
+    //   dl_exp,
+    //   dl_num,
+    //   address_1,
+    //   address_2,
+    //   city,
+    //   state,
+    //   zipcode,
+    //   hair,
+    //   eyes,
+    //   height,
+    //   weight,
+    //   organ_donor,
+    //   voter_reg,
+    //   user_email
+    // ])
+    //   .then(response => {
+    //     console.log("PUT successful", response);
+    //     res.status(200).json(response);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //     res.status(500).send(err);
+    //   });
   }
 };

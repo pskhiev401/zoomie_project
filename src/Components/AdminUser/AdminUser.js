@@ -5,8 +5,9 @@ import { connect } from "react-redux";
 import dlReducer, { getUserInfo } from "../../ducks/dlReducer";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import Modal from "react-modal";
+import { EmailAddress } from "@sendgrid/helpers/classes";
 
 const customStyles = {
   content: {
@@ -19,7 +20,7 @@ const customStyles = {
   }
 };
 
-// Modal.setAppElement('#yourAppElement')
+Modal.setAppElement(AdminUser);
 
 class AdminUser extends Component {
   constructor() {
@@ -28,8 +29,10 @@ class AdminUser extends Component {
       modalIsOpen: false,
       completedOrders: [],
       pendingOrders: [],
-      selectedObject: []
-      // allOrders : [],
+      selectedObject: [],
+      emailMessage: '',
+      default_message:
+        "Schweeeeeet! Your order was received and being processed. We will send you another email when your order is fulfilled along with a tracking number!"
     };
 
     this.openModal = this.openModal.bind(this);
@@ -65,7 +68,14 @@ class AdminUser extends Component {
     });
   }
 
+  sendEmail1 = (e) => {
+    // axios call
+    // through body,  selected object send EmailAddress, this.state.whatever you typed
+    // axios.post('"/api/sendEmail1"', {first: this.state.selectedObject, emailMessage: stuff })
+  }
+
   render() {
+    console.log(this.state.selectedObject);
     let displayAllPending = this.state.pendingOrders.map((e, i) => {
       return (
         <div key={i} className="user_card">
@@ -99,8 +109,14 @@ class AdminUser extends Component {
             CUSTOMER: {first_name} {last_name}
           </h1>
           <h1>JOB STATUS: {status}</h1>
-          <h1>EMAIL: {user_email}</h1>
-          <button>Notify Customer</button>
+          <h1>EMAIL: {user_email}</h1><br/>
+          <textarea
+            defaultValue={this.state.default_message}
+            maxlength={250}
+          />
+          <br />
+        {status === 'Completed' && <button>Notify Customer</button>}
+  
           <button>Complete Job</button>
         </Modal>
         <div className="admin_left">

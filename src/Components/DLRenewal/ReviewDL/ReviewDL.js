@@ -5,22 +5,23 @@ import { handleChange, finalDLSubmit } from "../../../ducks/dlReducer";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import axios from "axios";
-// import ContentEditable from "react-contenteditable";
 
 class ReviewDL extends Component {
-
-  finalDLSubmit = (e) => {
-    axios.put(`/api/finalDL/${e.auth_id}`, { e })
-  }
+  finalDLSubmit = async e => {
+    // ASYNC MUST BE PUT BEFORE PARAM IN AN ARROW FUNCTION
+    console.log(e);
+    // await axios.put(`/api/finalDL/${e.auth_id}`, {e});
+    await axios.post("/api/sendEmail1", {e});
+  };
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className="review_main">
         <div className="review_right">
           <div>
             First Name
             <input
-            contentEditable='true'
+              contentEditable="true"
               name="first_name"
               defaultValue={this.props.first_name}
               onChange={e => this.props.handleChange(e)}
@@ -217,9 +218,10 @@ class ReviewDL extends Component {
               <option value="no">No</option>
             </select>
           </div>
-          <button 
-          // onClick={() => this.props.finalDLSubmit(this.props)}
-          onClick={() => this.finalDLSubmit(this.props)}>
+          <button
+            // onClick={() => this.props.finalDLSubmit(this.props)}
+            onClick={() => this.finalDLSubmit(this.props)}
+          >
             Submit
           </button>
           <Link to="/dashboard" />

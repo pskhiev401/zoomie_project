@@ -22,6 +22,10 @@ const {
   getAllPending,
   getAllCompleted
 } = require("./controllers/admincontroller");
+const {
+  sendEmail1,
+  sendEmail2
+} = require("./controllers/nodeMailerController");
 
 app.use(cors());
 app.use(bodyParser.json({ limit: "50mb" }));
@@ -29,7 +33,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json());
 app.use(json());
 
-//**** SESSIONS ******
+//**** SESSIONS ****
 app.use(
   session({
     resave: false,
@@ -41,7 +45,7 @@ app.use(
   })
 );
 
-//*** PASSPORT ****
+//***** PASSPORT ******
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -65,7 +69,11 @@ app.post("/api/dlscan", scannedDL);
 app.get("/api/getAllPending", getAllPending);
 app.get("/api/getAllCompleted", getAllCompleted);
 
-//***** AUTH0 CONTROLLER ****
+// **** NODEMAILER CONTROLLER ****
+app.post("/api/sendEmail1", sendEmail1);
+app.post("/api/sendEmail2", sendEmail2);
+
+//***** AUTH0 CONTROLLER *****
 authCtrl(app);
 
 app.listen(port, () => {
