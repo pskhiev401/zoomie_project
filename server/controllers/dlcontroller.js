@@ -14,10 +14,10 @@ module.exports = {
     console.log("teeest", req.body, req.user.auth_id);
     // console.log('session', req.session)
     const {
-      first_name,
-      last_name,
+      // first_name,
+      // last_name,
       dob,
-      sex,
+      // sex,
       ssn,
       dl_type,
       dl_class,
