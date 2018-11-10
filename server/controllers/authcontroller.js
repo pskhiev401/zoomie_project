@@ -46,9 +46,4 @@ module.exports = app => {
       failureRedirect: "/"
     })
   );
-
-  // only used for testing 
-  // app.get("/success", (req, res) => {
-  //   res.status(200).json(req.user);
-  // });
 };

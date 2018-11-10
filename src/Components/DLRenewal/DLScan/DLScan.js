@@ -3,15 +3,36 @@ import "./DLScan.scss";
 import FileBase64 from "react-file-base64";
 import axios from "axios";
 import UserSideNav from "../../SideNav/Users/UserSideNav";
-// import microblink from 'microblink';
+import Modal from "react-modal";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)"
+  }
+};
 
 class DLScan extends Component {
   constructor() {
     super();
     this.state = {
+      modalIsOpen: false,
       files: [],
       blinkResponse: []
     };
+  }
+
+
+openModal() {
+  this.setState({ modalIsOpen: true })
+}
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
   }
 
   getFiles(files) {
@@ -27,12 +48,42 @@ class DLScan extends Component {
         console.log(res.data);
         this.setState({ blinkResponse: res.data });
       });
+    this.openModal(this.state.blinkResponse)
   };
 
   render() {
-    // console.log(this.state.files[0])
+    console.log(this.state.blinkResponse)
+    const {customerFamilyName,
+      customerFirstName,
+      dateOfBirth,
+      sex,
+      eyeColor,
+      hairColor,
+      weightPounds,
+      height,
+      fullAddress,
+      jurisdictionVehicleClass,
+      documentExpirationDate} = this.state.blinkResponse
     return (
       <div className="scan_main">
+      <Modal
+        isOpen={this.state.modalIsOpen}
+        // onAfterOpen={this.afterOpenModal}
+        onRequestClose={this.closeModal}
+        style={customStyles}>
+
+          <div>{customerFamilyName}</div>
+          <div>{customerFirstName}</div>
+          <div>{dateOfBirth}</div>
+          <div>{sex}</div>
+          <div>{eyeColor}</div>
+          <div>{hairColor}</div>
+          <div>{weightPounds}</div>
+          <div>{height}</div>
+          <div>{fullAddress}</div>
+          <div>{jurisdictionVehicleClass}</div>
+          <div>{documentExpirationDate}</div>
+        </Modal>
         <div className="left_container">
           <UserSideNav />
         </div>
@@ -62,14 +113,16 @@ class DLScan extends Component {
             Submit
           </button>
 
-          {this.state.files.length !== 0 ? (
+        
+
+          {/* {this.state.files.length !== 0 ? (
             <div>
               <h3 className="text-center mt-25">Callback Object</h3>
               <div className="pre-container">
                 <pre>{JSON.stringify(this.state.files, null, 2)}</pre>
               </div>
             </div>
-          ) : null}
+          ) : null} */}
         </div>
       </div>
     );

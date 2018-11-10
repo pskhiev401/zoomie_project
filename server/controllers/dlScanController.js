@@ -8,15 +8,12 @@ module.exports = {
     // console.log(req.body);
     const db = req.app.get("db");
     const { base64 } = req.body;
-    // db.submit_dl_scan([base64]);
-    //   console.log(req.body.base64)
-    // .then(response => {
     axios
-      .post("https://api.microblink.com/recognize/execute", {recognizers: ["USDL", "PDF417"],imageBase64: base64
-      },{headers: { Authorization: process.env.MB_TOKEN, "Content-Type": "application/json" }}, )
-      .then(response => res.status(200).json(response.data)).catch(err => {
-      console.log(err);
-      res.status(500).send(err);
-    });
+    .post("https://api.microblink.com/recognize/execute", {recognizers: ["USDL", "PDF417"],imageBase64: base64
+    },{headers: { Authorization: process.env.MB_TOKEN, "Content-Type": "application/json" }}, )
+    .then(response => res.status(200).json(response.data.data[0].result)).catch(err => {
+    console.log(err);
+    res.status(500).send(err);
+  });
   }
 };

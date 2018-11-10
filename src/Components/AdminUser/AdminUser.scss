@@ -5,7 +5,6 @@
   display: flex;
   margin: 1%;
 
-
   .pending_container {
     margin: auto;
     height: 95%;
@@ -48,33 +47,42 @@
       font-size: 1.5em;
     }
   }
-
   // .pending_container
   // .completed_container
   // .charts_container
 }
 
-.ReactModal__Content--after-open {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50% !important;
-  width: 50% !important;
-  
+.styles_modal__gNwvD {
+  min-width: 30vw;
+  min-height: auto;
+  position: relative;
+  padding: 1.2rem;
+  border-radius: 10px;
+  background: #ffffff;
+  background-clip: padding-box;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
+  margin: auto;
 
-  textarea{
-  height: 50% !important;
-  width: 75% !important;
-  border-radius: 3px;
+  h1{
+    font-size: 1.3em;
   }
-  button{
-    padding: 3%;
+  .btn_container{
     display: flex;
-    background: teal;
-    color: white;
-    font-size: .8em;
-    border-radius: 25px;
+    justify-content: space-around;
+    width: 100%;
+  }
 
+  button{
+    font-size: 1em;
+    background: rgb(32, 101, 113);
+    color: white;
+    border-radius: 10px;
+  }
+  textarea{
+    
+    min-width: 100%;
+    min-height: 15vh;
+    background: rgb(228, 243, 249);
+    font-size: .9em;
   }
 }
