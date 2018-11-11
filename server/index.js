@@ -20,7 +20,9 @@ const {
 const { scannedDL } = require("./controllers/dlScanController");
 const {
   getAllPending,
-  getAllCompleted
+  getAllCompleted,
+  updateStatus,
+  deleteJob
 } = require("./controllers/admincontroller");
 const {
   sendEmail1,
@@ -68,6 +70,8 @@ app.post("/api/dlscan", scannedDL);
 // ***** ADMIN SIDE ENDPOINTS *****
 app.get("/api/getAllPending", getAllPending);
 app.get("/api/getAllCompleted", getAllCompleted);
+app.post("/api/updateStatus", updateStatus);
+app.delete("/api/deleteJob/:id", deleteJob);
 
 // **** NODEMAILER CONTROLLER ****
 app.post("/api/sendEmail1", sendEmail1);

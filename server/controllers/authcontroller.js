@@ -21,7 +21,7 @@ module.exports = app => {
   );
 
   passport.serializeUser((profile, done) => {
-    // console.log(profile._json)
+    console.log(profile._json)
     const db = app.get("db");
     console.log('id', profile.id)
     db.get_authid(profile.id).then(user => {

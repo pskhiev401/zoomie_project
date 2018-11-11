@@ -26,15 +26,15 @@ module.exports = {
   },
 
   sendEmail2: (req, res, next) => {
-    console.log(req.body);
-    const { first_name, user_email, message } = req.body;
-
+    console.log("****sendmail2 ***", req.body.e.obj.user_email);
+    const { emailMessage } = req.body.e;
+    const { first_name, user_email } = req.body.e.obj;
     transporter
       .sendMail({
-        From: `${process.env.ADMIN_EMAIL}`,
-        To: user_email,
-        subject: `Your Zoomie Order Processed`,
-        text: message
+        from: process.env.ADMIN_EMAIL,
+        to: user_email,
+        subject: `${first_name}, Your Zoomie Order Completed`,
+        text: emailMessage
       })
       .catch(err => {
         console.log(err);

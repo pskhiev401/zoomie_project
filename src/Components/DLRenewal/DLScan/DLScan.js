@@ -3,7 +3,7 @@ import "./DLScan.scss";
 import FileBase64 from "react-file-base64";
 import axios from "axios";
 import UserSideNav from "../../SideNav/Users/UserSideNav";
-import Modal from "react-modal";
+// import Modal from "react-modal";
 
 const customStyles = {
   content: {
@@ -66,7 +66,7 @@ openModal() {
       documentExpirationDate} = this.state.blinkResponse
     return (
       <div className="scan_main">
-      <Modal
+      {/* <Modal
         isOpen={this.state.modalIsOpen}
         // onAfterOpen={this.afterOpenModal}
         onRequestClose={this.closeModal}
@@ -83,7 +83,7 @@ openModal() {
           <div>{fullAddress}</div>
           <div>{jurisdictionVehicleClass}</div>
           <div>{documentExpirationDate}</div>
-        </Modal>
+        </Modal> */}
         <div className="left_container">
           <UserSideNav />
         </div>

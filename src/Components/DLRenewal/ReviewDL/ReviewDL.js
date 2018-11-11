@@ -10,7 +10,7 @@ class ReviewDL extends Component {
   finalDLSubmit = async e => {
     // ASYNC MUST BE PUT BEFORE PARAM IN AN ARROW FUNCTION
     console.log(e);
-    // await axios.put(`/api/finalDL/${e.auth_id}`, {e});
+    await axios.put(`/api/finalDL/${e.auth_id}`, {e});
     await axios.post("/api/sendEmail1", {e});
   };
   render() {

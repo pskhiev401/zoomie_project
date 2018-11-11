@@ -13,24 +13,26 @@ class AdminUser extends Component {
     selectedObject: [],
     emailMessage: "",
     default_message:
-      "Wow that was....EASY! You should receive your items in the mail within 3-4 business days!"
+      "Wow that was...EASY! You will receive your items in the mail within 3-4 business days!"
   };
   componentDidMount() {
-    //get userdata then update reducer
-    axios.get("/api/getUserData").then(res => {
-      this.props.getUserInfo(res.data[0]);
-    });
-    //pending jobs table
+    this.getPendingList();
+    this.getCompletedList();
+  }
+
+  getPendingList = () => {
     axios.get("/api/getAllPending").then(res => {
       this.setState({ pendingOrders: res.data });
     });
-    //completed jobs table
+  };
+
+  getCompletedList = () => {
     axios.get("/api/getAllCompleted").then(res => {
       console.log(res.data);
       this.setState({ completedOrders: res.data });
     });
-  }
-  // MODAL 
+  };
+  // MODAL
   onOpenModal = obj => {
     this.setState({ open: true, selectedObject: obj });
   };
@@ -40,23 +42,31 @@ class AdminUser extends Component {
   };
 
   //EMAIL HANDLER
-  emailHandler2 = () => {
-    // through body,  selected object send EmailAddress, this.state.whatever you typed
-    axios.post('"/api/sendEmail2"', {obj: this.state.selectedObject, emailMessage: this.state.default_message })
+  emailHandler2 = e => {
+    console.log(e);
+    axios.post("/api/sendEmail2", { e });
   };
   // JOB STATUS HANDLERS
-  reviewedJob = (e) =>{
-    console.log(e)
-  }
-
-  completeJob = (e) => {
-    console.log(e)
-    //axios.delete
-  }
+  reviewedJob = e => {
+    console.log("reviewedJob", e);
+    axios.post("/api/updateStatus", { e }).then(this.componentDidMount());
+  };
+  //DELETE JOBS
+  completeJob = id => {
+    axios.delete(`/api/deleteJob/${id}`).then(this.componentDidMount());
+  };
 
   render() {
+    console.log("pendingOrders", this.state.pendingOrders);
+    console.log("completed Orders", this.state.completedOrders);
+    console.log("selectedObject", this.state.selectedObject);
     const { open } = this.state;
-    const {first_name,last_name,status,user_email} = this.state.selectedObject;
+    const {
+      first_name,
+      last_name,
+      status,
+      user_email
+    } = this.state.selectedObject;
     let displayAllPending = this.state.pendingOrders.map((e, i) => {
       return (
         <div key={i} className="user_card">
@@ -71,6 +81,7 @@ class AdminUser extends Component {
         </div>
       );
     });
+    // RENDER TO SCREEN
     return (
       <div className="admin_main_container">
         <div className="admin_left">
@@ -79,12 +90,10 @@ class AdminUser extends Component {
         <div className="admin_right">
           <h1>Pending Job Tickets</h1>
           <div className="pending_container">{displayAllPending}</div>
-          {/* <div className="pending_container">TURTLE IN</div> */}
         </div>
         <div className="admin_right">
           <h1>Completed Job Tickets</h1>
           <div className="pending_container">{displayAllCompleted}</div>
-          {/* <div className="pending_container">A HALFSHELL</div> */}
         </div>
         <div className="admin_right">
           <h1>Charts</h1>
@@ -100,17 +109,40 @@ class AdminUser extends Component {
           {status === "Completed" && (
             <textarea
               defaultValue={this.state.default_message}
-              maxlength={250}
+              maxLength={250}
               onChange={e => this.setState({ default_message: e.target.value })}
             />
           )}
           <br />
-          <div className='btn_container'>
-            {status === "Completed" && <button>Notify Customer</button>}
-            {/* onClick={() => this.emailHandler2()} */}
-            {status === "Pending" && <button>Reviewed Completed</button>}
-            {/* onClick={this.reviewedJob(this.state.selectedObject)} */}
-            {status === "Completed" && <button>Job Completed</button>}
+          <div className="btn_container">
+            {status === "Completed" && (
+              <button
+                onClick={() =>
+                  this.emailHandler2({
+                    obj: this.state.selectedObject,
+                    emailMessage: this.state.default_message
+                  })
+                }
+              >
+                Notify Customer
+              </button>
+            )}
+            {status === "Pending" && (
+              <button
+                onClick={() => this.reviewedJob(this.state.selectedObject)}
+              >
+                Reviewed Completed
+              </button>
+            )}
+            {status === "Completed" && (
+              <button
+                onClick={() =>
+                  this.completeJob(this.state.selectedObject.user_id)
+                }
+              >
+                Job Completed
+              </button>
+            )}
           </div>
         </Modal>
       </div>
