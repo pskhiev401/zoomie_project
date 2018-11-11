@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Landing.scss";
-// import { Link } from "react-router-dom";
 
 class Landing extends Component {
   redirect(){

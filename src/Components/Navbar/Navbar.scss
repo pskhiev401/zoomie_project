@@ -6,12 +6,14 @@ $zoomie_yellowtail: "Yellowtail", cursive;
   color: white;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  padding-left: 2%;
+  padding-right: 2%;
+  background: darkslategrey;
   
 
   .nav_left {
-    // margin: 2%;
     p{
     font-family: $zoomie_yellowtail;
     color: $zoomie_teal;
@@ -21,12 +23,7 @@ $zoomie_yellowtail: "Yellowtail", cursive;
     }
   }
 
-  // .nav_middle{
-
-  // }
-
   .nav_right {
-    // margin: 3.5%;
     width: auto;
     display: flex;
     justify-content: space-around;

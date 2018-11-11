@@ -5,10 +5,12 @@ import { handleChange, finalDLSubmit } from "../../../ducks/dlReducer";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import axios from "axios";
+import UserSideNav from "../../SideNav/Users/UserSideNav";
 
 class ReviewDL extends Component {
+  // ASYNC BEFORE PARAM IN AN ARROW FUNCTION
+  // SUBMITS FINAL FORM & SENDS EMAIL1 TO USER
   finalDLSubmit = async e => {
-    // ASYNC MUST BE PUT BEFORE PARAM IN AN ARROW FUNCTION
     console.log(e);
     await axios.put(`/api/finalDL/${e.auth_id}`, {e});
     await axios.post("/api/sendEmail1", {e});
@@ -16,9 +18,13 @@ class ReviewDL extends Component {
   render() {
     // console.log(this.props);
     return (
-      <div className="review_main">
-        <div className="review_right">
-          <div>
+      <div className="dl4_main">
+        <div className="left_container">
+            <UserSideNav />
+        </div>
+
+        <div className="right_container">
+        <div>
             First Name
             <input
               contentEditable="true"
@@ -224,8 +230,10 @@ class ReviewDL extends Component {
           >
             Submit
           </button>
+          <div>
           <Link to="/dashboard" />
         </div>
+      </div>
       </div>
     );
   }

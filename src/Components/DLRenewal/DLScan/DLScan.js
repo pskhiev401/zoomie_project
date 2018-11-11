@@ -35,7 +35,9 @@ class DLScan extends Component {
     //   });
     // this.onOpenModal(this.state.blinkResponse)
   };
-
+  componentDidMount() {
+    // document.querySelector(".styles_modal__gNwvD").classList.add("modal_two");
+  }
   render() {
     const { open } = this.state;
     console.log(this.state.blinkResponse);
@@ -54,20 +56,18 @@ class DLScan extends Component {
     } = this.state.blinkResponse;
     return (
       <div className="scan_main">
-      <div className="left_container">
-          <UserSideNav />
+        <div className="left_container">
         </div>
         <button className="btn btn-action" onClick={this.onOpenModal}>
-          Open
-        </button>{" "}
-        
+          Review Data
+        </button>
         <div className="scan_center">
-
-        <h1 className="text-center">Upload Drivers License</h1>
+          <h1 className="text-center">Upload Drivers License</h1>
           <br />
           <div className="text-center mt-25">
             <FileBase64 multiple={true} onDone={this.getFiles.bind(this)} />
-          </div><br />
+          </div>
+          <br />
           <div className="text-center">
             {this.state.files.map((file, i) => {
               return (
@@ -86,8 +86,10 @@ class DLScan extends Component {
           </button>
         </div>
         <Modal open={open} onClose={this.onCloseModal} center>
-          <h1>Patric</h1>
-          <h1>Khiev</h1>
+          <div className="modal_box">
+            <h1>Patric</h1>
+            <h1>Khiev</h1>
+          </div>
           <h1>121688</h1>
           <h1>sex 1</h1>
           <h1>eye BRN</h1>

@@ -17,7 +17,7 @@ class Navbar extends Component {
           </Link>
         </div>
 
-        <div className="nav_middle"> middle</div>
+        <div className="nav_middle"></div>
 
         <div className="nav_right">
           <h2>

@@ -1,11 +1,15 @@
 .review_main{
-  height: 80vh;
-  width: 50vw;
+  height: 90vh;
   background: lightseagreen;
-  display: flex;
-  .review_right, .review_left{
-    height: 100%;
-    width: 50%;
-    border: 1.5px dashed pink;
+  display:flex;
+
+  .left_container{
+    width: 20vw;
+    background: lightblue;
   }
+
+  .right_container{
+    width: 80vw;
+  }
+
 }

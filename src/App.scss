@@ -134,21 +134,10 @@ $zoomie_linen: #e1dede;
 .App {
   background: $zoomie_slate;
 
-  // .navbar_class{
-  //   opacity: 0.4;
-  //   background-color: rgb(54, 52, 52); /* Black background color */
-  //   // position: fixed; /* Make it stick/fixed */
-  //   top: 0; /* Stay on top */
-  //   width: 100%; /* Full width */
-  //   transition: top 0.3s; /* Transition effect when sliding down (and up) */
-    
-  // }
-  
-
   button {
     color: white;
     background: $zoomie_teal;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     border-radius: 7px;
     border: #4f4e4c;
   }
