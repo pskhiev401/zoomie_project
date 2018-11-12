@@ -1,15 +1,18 @@
-.review_main{
+.review_main {
   height: 90vh;
   background: lightseagreen;
-  display:flex;
+  display: flex;
 
   // .left_container{
   //   width: 20vw;
   //   background: lightblue;
   // }
 
-  .right_container{
+  .right_container {
     width: 80vw;
   }
-
+}
+.stripe_container {
+  background: lightgoldenrodyellow;
+  border: 1px dashed salmon;
 }

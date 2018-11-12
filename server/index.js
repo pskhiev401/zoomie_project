@@ -1,7 +1,8 @@
 require("dotenv").config();
 // **** IMPORT DEPENDENCIES *****
-const express = require("express");
-const app = express();
+const app = require("express")();
+// const express = require("express");
+// const app = express();
 const session = require("express-session");
 const { json } = require("body-parser");
 const bodyParser = require("body-parser");
@@ -10,6 +11,8 @@ const massive = require("massive");
 const cors = require("cors");
 const authCtrl = require("./controllers/authcontroller");
 const passport = require("passport");
+//*** STRIPE *****
+const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 const {
   getDataAfterLogin,
@@ -18,7 +21,12 @@ const {
   finalDLsubmit
 } = require("./controllers/dlController");
 const { scannedDL } = require("./controllers/dlScanController");
-const {getAllPending,getAllCompleted,updateStatus,deleteJob} = require("./controllers/admincontroller");
+const {
+  getAllPending,
+  getAllCompleted,
+  updateStatus,
+  deleteJob
+} = require("./controllers/admincontroller");
 const {
   sendEmail1,
   sendEmail2
@@ -29,6 +37,7 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json());
 app.use(json());
+app.use(require("body-parser").text());
 
 //**** SESSIONS ****
 app.use(
@@ -74,6 +83,24 @@ app.post("/api/sendEmail2", sendEmail2);
 
 //***** AUTH0 CONTROLLER *****
 authCtrl(app);
+
+//*** STRIPE *****
+app.post("/charge", async (req, res) => {
+  console.log('hit',req.body);
+  try {
+    let { status } = await stripe.charges.create({
+      amount: 2000, //cents
+      currency: "usd",
+      description: "Zoomie Service Fee",
+      source: req.body
+    });
+    console.log({ status });
+
+    res.json({ status });
+  } catch (err) {
+    res.status(500).end();
+  }
+});
 
 app.listen(port, () => {
   console.log(`BEEP Listening on port ${port}`);

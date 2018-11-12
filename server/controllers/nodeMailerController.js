@@ -36,6 +36,7 @@ module.exports = {
         subject: `${first_name}, Your Zoomie Order Completed`,
         text: emailMessage
       })
+      .then(response => res.status(200).send("Cool it works"))
       .catch(err => {
         console.log(err);
         res.status(500).send(err);

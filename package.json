@@ -25,8 +25,11 @@
     "react-responsive-modal": "^3.5.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
+    "react-stripe-elements": "^2.0.1",
     "redux": "^4.0.1",
-    "redux-promise-middleware": "^5.1.1"
+    "redux-promise-middleware": "^5.1.1",
+    "stripe": "^6.15.0",
+    "sweetalert2": "^7.29.0"
   },
   "scripts": {
     "start": "react-scripts start",
