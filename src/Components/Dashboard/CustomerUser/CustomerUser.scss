@@ -4,11 +4,11 @@
   flex-wrap: nowrap;
   // align-items: center;
 
-  .left_container {
-    min-width: 20%;
-    min-height: 100%;
-    background: #696666;
-  }
+  // .left_container {
+  //   // min-width: 20%;
+  //   // min-height: 100%;
+  //   // background: rgb(182, 99, 99);
+  // }
 
   .empty_center {
     min-width: 10%;
@@ -37,7 +37,7 @@
         height: 50%;
         background: rgb(118, 118, 213);
 
-        .dl_icon{
+        .dl_icon {
           height: 15vh;
           width: auto;
         }

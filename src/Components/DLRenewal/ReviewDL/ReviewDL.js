@@ -12,6 +12,7 @@ class ReviewDL extends Component {
   // SUBMITS FINAL FORM & SENDS EMAIL1 TO USER
   finalDLSubmit = async e => {
     console.log(e);
+    // await stripe payment
     await axios.put(`/api/finalDL/${e.auth_id}`, {e});
     await axios.post("/api/sendEmail1", {e});
   };

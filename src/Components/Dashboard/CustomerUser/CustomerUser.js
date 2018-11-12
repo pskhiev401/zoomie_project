@@ -3,8 +3,8 @@ import "./CustomerUser.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
-import { getUserInfo } from "../../ducks/dlReducer";
-import UserSideNav from "../SideNav/Users/UserSideNav";
+import { getUserInfo } from "../../../ducks/dlReducer";
+import UserSideNav from "../../SideNav/Users/UserSideNav";
 
 class CustomerUser extends Component {
   componentDidMount() {

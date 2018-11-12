@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AdminSideNav from "../SideNav/Admin/AdminSideNav";
+import AdminSideNav from "../../SideNav/Admin/AdminSideNav";
 import "./AdminUser.scss";
 import { connect } from "react-redux";
 import axios from "axios";

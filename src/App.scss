@@ -1,4 +1,7 @@
-// CSS RESET FILE FROM MYERWEB //
+/* http://meyerweb.com/eric/tools/css/reset/ 
+  v2.0 | 20110126
+  License: none (public domain)
+*/
 html,
 body,
 div,
@@ -130,7 +133,9 @@ $zoomie_slate: #4f4e4c;
 $zoomie_grey: #776f6f;
 $zoomie_linen: #e1dede;
 
-
+* {
+  text-decoration: none;
+}
 .App {
   background: $zoomie_slate;
 
@@ -142,4 +147,9 @@ $zoomie_linen: #e1dede;
     border: #4f4e4c;
   }
 
+  .left_container {
+    min-width: 20%;
+    min-height: 100%;
+    background: #d7dbdc;
+  }
 }
