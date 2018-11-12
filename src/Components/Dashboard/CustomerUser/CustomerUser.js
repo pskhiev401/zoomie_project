@@ -14,7 +14,6 @@ class CustomerUser extends Component {
     });
   }
 
-
   render() {
     // console.log(this.props);
     return (
@@ -44,7 +43,7 @@ class CustomerUser extends Component {
               </div>
             </div>
           </div>
-          <div className="bottom_container">
+          {/* <div className="bottom_container">
             <div className="bt_top">
               <h2>Registration</h2>
             </div>
@@ -58,7 +57,7 @@ class CustomerUser extends Component {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );

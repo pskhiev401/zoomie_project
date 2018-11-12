@@ -1,9 +1,7 @@
 .scan_main {
-  margin: auto;
   height: 90vh;
-  width: 50%;
   background: lightseagreen;
-  display: flex;
+  display:flex;
 
   h1,
   p,
@@ -15,9 +13,8 @@
     min-width: 15vw;
   }
 
-  .scan_center {
-    min-height: 90vh;
-    width: 85%;
+  .right_container {
+    width: 80vw;
     background: teal;
     display: flex;
     flex-direction: column;
@@ -36,9 +33,4 @@
     border-radius: 10px;
   }
 
-  #modal_two {
-    background-color: red;
-    height: 30%;
-    width: 30%;
-  }
 }

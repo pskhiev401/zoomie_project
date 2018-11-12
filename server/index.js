@@ -18,12 +18,7 @@ const {
   finalDLsubmit
 } = require("./controllers/dlController");
 const { scannedDL } = require("./controllers/dlScanController");
-const {
-  getAllPending,
-  getAllCompleted,
-  updateStatus,
-  deleteJob
-} = require("./controllers/admincontroller");
+const {getAllPending,getAllCompleted,updateStatus,deleteJob} = require("./controllers/admincontroller");
 const {
   sendEmail1,
   sendEmail2

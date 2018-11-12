@@ -1,0 +1,25 @@
+.main_side_container {
+  margin: 3%;
+  height: 90%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+
+  .nav_item {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 5%;
+    margin: 1%;
+    width: 10vw;
+    img {
+      height: 4vh;
+      width: auto;
+      margin-right: 7%;
+    }
+    h2 {
+      font-size: 1.1em;
+      padding: 2%;
+    }
+  }
+}

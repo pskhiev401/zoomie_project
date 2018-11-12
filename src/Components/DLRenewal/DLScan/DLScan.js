@@ -57,11 +57,12 @@ class DLScan extends Component {
     return (
       <div className="scan_main">
         <div className="left_container">
+        <UserSideNav/>
         </div>
         <button className="btn btn-action" onClick={this.onOpenModal}>
           Review Data
         </button>
-        <div className="scan_center">
+        <div className="right_container">
           <h1 className="text-center">Upload Drivers License</h1>
           <br />
           <div className="text-center mt-25">
@@ -99,7 +100,7 @@ class DLScan extends Component {
           <h1>6 FALMOUTH COVE, SAN RAFAEL, CA 94901000</h1>
           <h1>C</h1>
           <h1>12162022</h1>
-          <button>Confirm</button>
+          <button>Pay Now</button>
 
           {/* <div>{customerFamilyName}</div>
           <div>{customerFirstName}</div>

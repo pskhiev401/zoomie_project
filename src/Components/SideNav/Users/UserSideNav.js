@@ -13,28 +13,28 @@ class UserSideNav extends Component {
             src="https://image.flaticon.com/icons/svg/983/983912.svg"
             alt="dashboard"
           />
-          <h2>DASHBOARD</h2>
+          <Link to='/dashboard'><h2>DASHBOARD</h2></Link>
         </div>
         <div className="nav_item">
           <img
             src="https://image.flaticon.com/icons/svg/299/299396.svg"
             alt="form"
           />
-          <h2>FORM</h2>
+          <Link to='/dl1'><h2>FORM</h2></Link>
         </div>
         <div className="nav_item">
           <img
             src="https://image.flaticon.com/icons/svg/70/70427.svg"
             alt="camera scanner"
           />
-          <h2>SCAN</h2>
+          <Link to='/dlscan'><h2>SCAN</h2></Link>
         </div>
         <div className="nav_item">
           <img
             src="https://image.flaticon.com/icons/svg/1250/1250678.svg"
             alt="signout"
           />
-          <h2>SIGNOUT</h2>
+          <Link to='/'><h2>SIGNOUT</h2></Link>
         </div>
       </div>
     );
