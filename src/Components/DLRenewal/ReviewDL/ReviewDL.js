@@ -38,7 +38,7 @@ class ReviewDL extends Component {
     // console.log(this.props);
     return (
       <div className="dl4_main">
-        <div className="left_container">
+        <div className="left_nav_container">
           <UserSideNav />
         </div>
 

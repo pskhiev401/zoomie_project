@@ -1,13 +1,8 @@
-.dl1_main {
+.dl_wiz_main {
   font-family: Poppins;
   height: 90vh;
   background: lightseagreen;
   display: flex;
-
-  // .left_container{
-  //   width: 20vw;
-  //   background: lightblue;
-  // }
 
   .right_container {
     width: 100%;
@@ -25,7 +20,7 @@
       margin: auto;
       justify-content: space-around;
       height: 90%;
-      width: 45%;
+      width: 55%;
       background: #fff;
       border-radius: 10px;
       padding: 3% 3% 3% 3%;

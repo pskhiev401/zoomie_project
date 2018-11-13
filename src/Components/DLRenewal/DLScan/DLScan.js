@@ -4,6 +4,7 @@ import FileBase64 from "react-file-base64";
 import axios from "axios";
 import UserSideNav from "../../SideNav/Users/UserSideNav";
 import Modal from "react-responsive-modal";
+import InsideScanModal from "./InsideScanModal";
 
 class DLScan extends Component {
   constructor() {
@@ -26,18 +27,16 @@ class DLScan extends Component {
     this.setState({ open: false });
   };
   submitHandler = () => {
-    console.log(this.state.files[0].base64);
+    // console.log(this.state.files[0].base64);
     // axios
     //   .post("/api/dlscan", { base64: this.state.files[0].base64 })
     //   .then(res => {
     //     console.log(res.data);
     //     this.setState({ blinkResponse: res.data });
     //   });
-    // this.onOpenModal(this.state.blinkResponse)
+    this.onOpenModal(this.state.blinkResponse);
   };
-  componentDidMount() {
-    // document.querySelector(".styles_modal__gNwvD").classList.add("modal_two");
-  }
+
   render() {
     const { open } = this.state;
     console.log(this.state.blinkResponse);
@@ -56,8 +55,8 @@ class DLScan extends Component {
     } = this.state.blinkResponse;
     return (
       <div className="scan_main">
-        <div className="left_container">
-        <UserSideNav/>
+        <div className="left_nav_container">
+          <UserSideNav />
         </div>
         <button className="btn btn-action" onClick={this.onOpenModal}>
           Review Data
@@ -69,6 +68,7 @@ class DLScan extends Component {
             <FileBase64 multiple={true} onDone={this.getFiles.bind(this)} />
           </div>
           <br />
+          
           <div className="text-center">
             {this.state.files.map((file, i) => {
               return (
@@ -86,10 +86,13 @@ class DLScan extends Component {
             Submit
           </button>
         </div>
+
         <Modal open={open} onClose={this.onCloseModal} center>
           <div className="modal_box">
-            <h1>Patric</h1>
-            <h1>Khiev</h1>
+            <div className='top_name'>
+              <h1>Patric</h1>
+              <h1>Khiev</h1>
+            </div>
           </div>
           <h1>121688</h1>
           <h1>sex 1</h1>

@@ -9,8 +9,8 @@ import UserSideNav from "../../SideNav/Users/UserSideNav";
 class DL1 extends Component {
   render() {
     return (
-      <div className="dl1_main">
-        <div className="left_container">
+      <div className="dl_wiz_main">
+        <div className="left_nav_container">
           <UserSideNav />
         </div>
 

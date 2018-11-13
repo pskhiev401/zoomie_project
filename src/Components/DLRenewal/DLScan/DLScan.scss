@@ -1,7 +1,7 @@
 .scan_main {
   height: 90vh;
   background: lightseagreen;
-  display:flex;
+  display: flex;
 
   h1,
   p,
@@ -9,7 +9,7 @@
     font-size: 2rem;
   }
 
-  .left_container {
+  .left_nav_container {
     min-width: 15vw;
   }
 
@@ -25,6 +25,11 @@
       margin: auto;
       // width: 5;
     }
+    .temp_container {
+      height: 50%;
+      background: lightgoldenrodyellow;
+      border: 1.5px dashed purple;
+    }
   }
 
   .img_box {
@@ -33,4 +38,13 @@
     border-radius: 10px;
   }
 
+  // .modal_box{
+  //   .top_name{
+  //     display: flex;
+  //   }
+  // }
+  .styles_modal__gNwvD {
+    height: 50vh;
+    width: 50vw;
+  }
 }

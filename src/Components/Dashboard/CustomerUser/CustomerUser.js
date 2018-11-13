@@ -18,7 +18,7 @@ class CustomerUser extends Component {
     // console.log(this.props);
     return (
       <div className="dash_main">
-        <div className="left_container">
+        <div className="left_nav_container">
           <UserSideNav />
         </div>
         <div className="empty_center" />
