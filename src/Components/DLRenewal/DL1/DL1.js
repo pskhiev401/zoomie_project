@@ -16,7 +16,7 @@ class DL1 extends Component {
 
         <div className="right_container">
           <div className="wrapper_container">
-            <h1>Drivers License Stuff</h1>
+            <h1>Drivers License</h1>
             <h2>Fill In Details About Your License</h2>
             <div>
               <h2>DL Form Type</h2>

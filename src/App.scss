@@ -87,7 +87,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -148,7 +147,7 @@ $zoomie_linen: #e1dede;
     font-size: 1.3rem;
     border-radius: 9px;
     border: #4f4e4c;
-    padding: 2%;
+    padding: 1%;
   }
 
   .left_container {
