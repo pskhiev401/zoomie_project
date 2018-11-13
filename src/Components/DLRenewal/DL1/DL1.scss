@@ -1,5 +1,5 @@
 .dl1_main {
-  // margin: auto;
+  font-family: Poppins;
   height: 90vh;
   background: lightseagreen;
   display: flex;
@@ -10,6 +10,52 @@
   // }
 
   .right_container {
-    width: 80vw;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(65deg, #00dbde, #f957fce0);
+
+    .wrapper_container {
+      margin: auto;
+      height: 90%;
+      width: 45%;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 3% 3% 3% 3%;
+
+      div {
+        padding: 4%;
+      }
+      h1 {
+        font-size: 2em;
+        display: block;
+        color: #333333;
+        text-align: center;
+        padding-bottom: 7%;
+      }
+
+      h2 {
+        color: rgba(128, 128, 128, 0.527);
+      }
+      select,
+      input {
+        color: #56626d;
+        width: 90%;
+        border-bottom: 1px solid #5c5858;
+        border-top: 0px solid #d9d9d9;
+        border-right: 0px solid #d9d9d9;
+        border-left: 0px solid #d9d9d9;
+        padding-bottom: 1%;
+        margin-bottom: 2%;
+        margin-right: 5%;
+        background: transparent;
+        font-size: 0.8em;
+      }
+    }
   }
 }

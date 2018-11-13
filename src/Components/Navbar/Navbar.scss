@@ -22,11 +22,11 @@ $zoomie_yellowtail: "Yellowtail", cursive;
     .hamburger_icon {
       font-size: 2.5em;
       color: $zoomie_teal;
-      // margin-left: 1%;
+      margin-left: 10%;
       text-shadow: 2px 2px 4px #000000;
     }
     .hamburger_icon:hover {
-      font-size: 2.8em;
+      font-size: 2.6em;
       color: #f3eef5;
       cursor: pointer;
     }
@@ -40,7 +40,7 @@ $zoomie_yellowtail: "Yellowtail", cursive;
     }
 
     h1:hover {
-      font-size: 2.4em;
+      font-size: 3em;
       color: #f3eef5;
       cursor: pointer;
     }
@@ -53,9 +53,8 @@ $zoomie_yellowtail: "Yellowtail", cursive;
     text-decoration: none;
   }
 
-  h2{
+  h2 {
     font-size: 1.1em;
     text-shadow: 0px 0px 0px #000000;
-
   }
 }

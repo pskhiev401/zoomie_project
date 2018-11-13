@@ -19,8 +19,7 @@ class DL3 extends Component {
             <select
               name="sex"
               onChange={e => this.props.handleChange(e)}
-              defaultValue={this.props.sex}
-            >
+              defaultValue={this.props.sex}>
               <option value="">Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>

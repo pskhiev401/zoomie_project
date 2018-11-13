@@ -137,6 +137,7 @@ $zoomie_linen: #e1dede;
   text-decoration: none;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 .App {
   background: $zoomie_slate;
@@ -145,8 +146,9 @@ $zoomie_linen: #e1dede;
     color: white;
     background: $zoomie_teal;
     font-size: 1.3rem;
-    border-radius: 7px;
+    border-radius: 9px;
     border: #4f4e4c;
+    padding: 2%;
   }
 
   .left_container {
