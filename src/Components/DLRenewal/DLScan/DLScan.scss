@@ -1,3 +1,5 @@
+$zoomie_teal: #57ccd1;
+
 .scan_main {
   height: 90vh;
   background: lightseagreen;
@@ -31,20 +33,62 @@
       border: 1.5px dashed purple;
     }
   }
+}
+.scanner_modal {
+  height: auto;
+  min-width: 45vw;
+  background: olivedrab;
+  border: 1px dashed orange;
+  border-radius: 5px;
 
-  .img_box {
-    height: 35vh;
-    width: auto;
-    border-radius: 10px;
-  }
+  .modal_content {
+    margin: auto;
+    width: 90%;
+    background: pink;
+    display: flex;
+    flex-direction: column;
 
-  // .modal_box{
-  //   .top_name{
-  //     display: flex;
-  //   }
-  // }
-  .styles_modal__gNwvD {
-    height: 50vh;
-    width: 50vw;
+    button {
+      font-size: 1.2em;
+      border-radius: 10px;
+      background: rgb(6, 179, 179);
+      color: white;
+    }
+
+    .top_name {
+      display: flex;
+      justify-content: space-evenly;
+      font-size: 3em;
+      background: rgb(160, 103, 213);
+      padding: 0.2%;
+      align-content: center;
+      align-items: center;
+      img {
+        height: 10vh;
+      }
+    }
+    .modal_bottom {
+      img {
+        height: 5vh;
+        margin-right: 2%;
+      }
+      display: flex;
+    }
+    .modal_right,
+    .modal_left {
+      background: rgb(213, 183, 65);
+      height: 100%;
+      width: 50%;
+      div {
+        padding: 3%;
+      }
+    }
+    .modal_right {
+      .add_bottom {
+        display: flex;
+        width: auto;
+        justify-content: space-evenly;
+      }
+    }
   }
 }

@@ -8,7 +8,7 @@ import UserSideNav from "../../SideNav/Users/UserSideNav";
 class DL3 extends Component {
   render() {
     return (
-      <div className="dl3_main">
+      <div className="dl_wiz_main">
         <div className="left_nav_container">
           <UserSideNav />
         </div>
@@ -16,9 +16,9 @@ class DL3 extends Component {
         <div className="right_container">
           <div className="wrapper_container">
             <h1>Extra Deets</h1>
-            <h2>We need the right info to clone you...</h2>
+            <h2>Sooo we need more info...</h2>
             <div>
-              <h1>SEX</h1>
+              <h2>SEX</h2>
               <select
                 name="sex"
                 onChange={e => this.props.handleChange(e)}
@@ -31,7 +31,7 @@ class DL3 extends Component {
             </div>
 
             <div>
-              <h1>HAIR</h1>
+              <h2>HAIR</h2>
               <input
                 name="hair"
                 defaultValue={this.props.hair}
@@ -39,8 +39,9 @@ class DL3 extends Component {
                 onChange={e => this.props.handleChange(e)}
               />
             </div>
+
             <div>
-              <h1>EYES</h1>
+              <h2>EYES</h2>
               <input
                 name="eyes"
                 defaultValue={this.props.eyes}
@@ -49,7 +50,7 @@ class DL3 extends Component {
               />
             </div>
             <div>
-              <h1>HEIGHT</h1>
+              <h2>HEIGHT</h2>
               <input
                 name="height"
                 defaultValue={this.props.height}
@@ -58,7 +59,7 @@ class DL3 extends Component {
               />
             </div>
             <div>
-              WEIGHT
+              <h2>WEIGHT</h2>
               <input
                 name="weight"
                 defaultValue={this.props.weight}

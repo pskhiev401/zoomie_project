@@ -49,17 +49,23 @@ class AdminUser extends Component {
   // JOB STATUS HANDLERS
   reviewedJob = e => {
     console.log("reviewedJob", e);
-    axios.post("/api/updateStatus", { e }).then(this.componentDidMount());
+    axios.post("/api/updateStatus", { e }).then(() => {
+      this.getPendingList();
+      this.getCompletedList();
+    });
   };
   //DELETE JOBS
   completeJob = id => {
-    axios.delete(`/api/deleteJob/${id}`).then(this.componentDidMount());
+    axios.delete(`/api/deleteJob/${id}`).then(() => {
+      this.getPendingList();
+      this.getCompletedList();
+    });
   };
 
   render() {
-    console.log("pendingOrders", this.state.pendingOrders);
-    console.log("completed Orders", this.state.completedOrders);
-    console.log("selectedObject", this.state.selectedObject);
+    // console.log("pendingOrders", this.state.pendingOrders);
+    // console.log("completed Orders", this.state.completedOrders);
+    // console.log("selectedObject", this.state.selectedObject);
     const { open } = this.state;
     const {
       first_name,
@@ -100,49 +106,53 @@ class AdminUser extends Component {
           <div className="pending_container">TURTLE POWER</div>
         </div>
         <Modal open={open} onClose={this.onCloseModal} center>
-          <h1>
-            CUSTOMER: {first_name} {last_name}
-          </h1>
-          <h1>JOB STATUS: {status}</h1>
-          <h1>EMAIL: {user_email}</h1>
-          <br />
-          {status === "Completed" && (
-            <textarea
-              defaultValue={this.state.default_message}
-              maxLength={250}
-              onChange={e => this.setState({ default_message: e.target.value })}
-            />
-          )}
-          <br />
-          <div className="btn_container">
+          <div className="admin_modal">
+            <h1>
+              CUSTOMER: {first_name} {last_name}
+            </h1>
+            <h1>JOB STATUS: {status}</h1>
+            <h1>EMAIL: {user_email}</h1>
+            <br />
             {status === "Completed" && (
-              <button
-                onClick={() =>
-                  this.emailHandler2({
-                    obj: this.state.selectedObject,
-                    emailMessage: this.state.default_message
-                  })
+              <textarea
+                defaultValue={this.state.default_message}
+                maxLength={250}
+                onChange={e =>
+                  this.setState({ default_message: e.target.value })
                 }
-              >
-                Notify Customer
-              </button>
+              />
             )}
-            {status === "Pending" && (
-              <button
-                onClick={() => this.reviewedJob(this.state.selectedObject)}
-              >
-                Reviewed Completed
-              </button>
-            )}
-            {status === "Completed" && (
-              <button
-                onClick={() =>
-                  this.completeJob(this.state.selectedObject.user_id)
-                }
-              >
-                Job Completed
-              </button>
-            )}
+            <br />
+            <div className="btn_container">
+              {status === "Completed" && (
+                <button
+                  onClick={() =>
+                    this.emailHandler2({
+                      obj: this.state.selectedObject,
+                      emailMessage: this.state.default_message
+                    })
+                  }
+                >
+                  Notify Customer
+                </button>
+              )}
+              {status === "Pending" && (
+                <button
+                  onClick={() => this.reviewedJob(this.state.selectedObject)}
+                >
+                  Reviewed Completed
+                </button>
+              )}
+              {status === "Completed" && (
+                <button
+                  onClick={() =>
+                    this.completeJob(this.state.selectedObject.user_id)
+                  }
+                >
+                  Job Completed
+                </button>
+              )}
+            </div>
           </div>
         </Modal>
       </div>

@@ -40,19 +40,19 @@ class DLScan extends Component {
   render() {
     const { open } = this.state;
     console.log(this.state.blinkResponse);
-    const {
-      customerFamilyName,
-      customerFirstName,
-      dateOfBirth,
-      sex,
-      eyeColor,
-      hairColor,
-      weightPounds,
-      height,
-      fullAddress,
-      jurisdictionVehicleClass,
-      documentExpirationDate
-    } = this.state.blinkResponse;
+    // const {
+    //   customerFamilyName,
+    //   customerFirstName,
+    //   dateOfBirth,
+    //   sex,
+    //   eyeColor,
+    //   hairColor,
+    //   weightPounds,
+    //   height,
+    //   fullAddress,
+    //   jurisdictionVehicleClass,
+    //   documentExpirationDate
+    // } = this.state.blinkResponse;
     return (
       <div className="scan_main">
         <div className="left_nav_container">
@@ -68,7 +68,7 @@ class DLScan extends Component {
             <FileBase64 multiple={true} onDone={this.getFiles.bind(this)} />
           </div>
           <br />
-          
+
           <div className="text-center">
             {this.state.files.map((file, i) => {
               return (
@@ -81,31 +81,76 @@ class DLScan extends Component {
               );
             })}
           </div>
-          <br />
           <button onClick={() => this.submitHandler()} className="scan_button">
             Submit
           </button>
         </div>
 
         <Modal open={open} onClose={this.onCloseModal} center>
-          <div className="modal_box">
-            <div className='top_name'>
-              <h1>Patric</h1>
-              <h1>Khiev</h1>
+          <div className="scanner_modal">
+            <div className="modal_content">
+              hi
+              <div className="top_name">
+                <img
+                  src="https://image.flaticon.com/icons/svg/262/262527.svg"
+                  alt="person logo"
+                />
+                <div>Patric</div>
+                <div>Khiev</div>
+              </div>
+              <div className="modal_bottom">
+                <div className="modal_left">
+                  <div>
+                    <img
+                      src="https://image.flaticon.com/icons/svg/918/918183.svg"
+                      alt="birthday cake"
+                    />
+                    12.26.2000
+                  </div>
+                  <div>
+                    <img
+                      src="https://image.flaticon.com/icons/svg/1152/1152322.svg"
+                      alt="sex icon"
+                    />
+                    MALE
+                  </div>
+                  <div>
+                    <img
+                      src="https://image.flaticon.com/icons/svg/802/802067.svg"
+                      alt="eye icon"
+                    />
+                    BRN
+                  </div>
+                  <div>
+                    <img src=" " alt="hair icon" />
+                    hair BRN
+                  </div>
+                  <div>188</div>
+                  <div>
+                    <img
+                      src="https://image.flaticon.com/icons/svg/392/392932.svg"
+                      alt="height icon"
+                    />
+                    6'0''
+                  </div>
+                </div>
+                <div className="modal_right">
+                  <div className="add_top">
+                    <div>6 FALMOUTH COVE</div>
+                  </div>
+                  <div className="add_bottom">
+                    <div>SAN RAFAEL</div>
+                    <div>CA</div>
+                    <div>94901</div>
+                  </div>
+                  <div>CLASS C</div>
+                  <div>12.26.2022</div>
+                </div>
+              </div>
+              <button>Pay Now</button>
             </div>
-          </div>
-          <h1>121688</h1>
-          <h1>sex 1</h1>
-          <h1>eye BRN</h1>
-          <h1>hair BRN</h1>
-          <h1>188</h1>
-          <h1>72 in</h1>
-          <h1>6 FALMOUTH COVE, SAN RAFAEL, CA 94901000</h1>
-          <h1>C</h1>
-          <h1>12162022</h1>
-          <button>Pay Now</button>
 
-          {/* <div>{customerFamilyName}</div>
+            {/* <div>{customerFamilyName}</div>
           <div>{customerFirstName}</div>
           <div>{dateOfBirth}</div>
           <div>{sex}</div>
@@ -116,6 +161,7 @@ class DLScan extends Component {
           <div>{fullAddress}</div>
           <div>{jurisdictionVehicleClass}</div>
           <div>{documentExpirationDate}</div> */}
+          </div>
         </Modal>
       </div>
     );
