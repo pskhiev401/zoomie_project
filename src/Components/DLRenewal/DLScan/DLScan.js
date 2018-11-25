@@ -4,7 +4,7 @@ import FileBase64 from "react-file-base64";
 import axios from "axios";
 import UserSideNav from "../../SideNav/Users/UserSideNav";
 import Modal from "react-responsive-modal";
-import InsideScanModal from "./InsideScanModal";
+import swal from "sweetalert2";
 
 class DLScan extends Component {
   constructor() {
@@ -26,20 +26,25 @@ class DLScan extends Component {
   onCloseModal = () => {
     this.setState({ open: false });
   };
-  submitHandler = () => {
+  submitHandler = async () => {
     // console.log(this.state.files[0].base64);
-    // axios
+    // await axios
     //   .post("/api/dlscan", { base64: this.state.files[0].base64 })
     //   .then(res => {
     //     console.log(res.data);
     //     this.setState({ blinkResponse: res.data });
     //   });
-    this.onOpenModal(this.state.blinkResponse);
+    await swal({
+      type: "success",
+      title: "GREAT SUCCESS!",
+      text: "-Borat"
+    });
+    await this.onOpenModal(this.state.blinkResponse);
   };
 
   render() {
     const { open } = this.state;
-    console.log(this.state.blinkResponse);
+    // console.log(this.state.blinkResponse);
     // const {
     //   customerFamilyName,
     //   customerFirstName,
@@ -58,9 +63,9 @@ class DLScan extends Component {
         <div className="left_nav_container">
           <UserSideNav />
         </div>
-        <button className="btn btn-action" onClick={this.onOpenModal}>
+        {/* <button className="btn btn-action" onClick={this.onOpenModal}>
           Review Data
-        </button>
+        </button> */}
         <div className="right_container">
           <h1 className="text-center">Upload Drivers License</h1>
           <br />
@@ -89,7 +94,6 @@ class DLScan extends Component {
         <Modal open={open} onClose={this.onCloseModal} center>
           <div className="scanner_modal">
             <div className="modal_content">
-              hi
               <div className="top_name">
                 <img
                   src="https://image.flaticon.com/icons/svg/262/262527.svg"
@@ -122,16 +126,25 @@ class DLScan extends Component {
                     BRN
                   </div>
                   <div>
-                    <img src=" " alt="hair icon" />
-                    hair BRN
+                    <img
+                      src="https://image.flaticon.com/icons/svg/1234/1234085.svg"
+                      alt="hair icon"
+                    />
+                    BRN
                   </div>
-                  <div>188</div>
                   <div>
                     <img
                       src="https://image.flaticon.com/icons/svg/392/392932.svg"
                       alt="height icon"
                     />
                     6'0''
+                  </div>
+                  <div>
+                    <img
+                      src="https://image.flaticon.com/icons/svg/940/940638.svg"
+                      alt="weight icon"
+                    />
+                    175 lbs
                   </div>
                 </div>
                 <div className="modal_right">
@@ -143,8 +156,20 @@ class DLScan extends Component {
                     <div>CA</div>
                     <div>94901</div>
                   </div>
-                  <div>CLASS C</div>
-                  <div>12.26.2022</div>
+                  <div>
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Newcomer_Koreisha_Badge.svg/512px-Newcomer_Koreisha_Badge.svg.png"
+                      alt="wakaba mark"
+                    />
+                    CLASS C
+                  </div>
+                  <div>
+                    <img
+                      src="https://image.flaticon.com/icons/svg/1233/1233065.svg"
+                      alt="expired card"
+                    />
+                    12.26.2022
+                  </div>
                 </div>
               </div>
               <button>Pay Now</button>

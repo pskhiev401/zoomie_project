@@ -23,28 +23,27 @@ $zoomie_teal: #57ccd1;
     text-align: center;
     padding: 2% 0 0 0;
 
+    .img_box {
+      height: 45vh;
+    }
+
     .scan_button {
       margin: auto;
       // width: 5;
-    }
-    .temp_container {
-      height: 50%;
-      background: lightgoldenrodyellow;
-      border: 1.5px dashed purple;
     }
   }
 }
 .scanner_modal {
   height: auto;
-  min-width: 45vw;
-  background: olivedrab;
-  border: 1px dashed orange;
-  border-radius: 5px;
+  min-width: 81vh;
+  background: #a5bbeb;
+  // border: 1px dashed orange;
+  border-radius: 1%;
 
   .modal_content {
     margin: auto;
     width: 90%;
-    background: pink;
+    // background: pink;
     display: flex;
     flex-direction: column;
 
@@ -58,11 +57,10 @@ $zoomie_teal: #57ccd1;
     .top_name {
       display: flex;
       justify-content: space-evenly;
-      font-size: 3em;
-      background: rgb(160, 103, 213);
-      padding: 0.2%;
       align-content: center;
       align-items: center;
+      font-size: 3em;
+      padding: 0.2%;
       img {
         height: 10vh;
       }
@@ -76,7 +74,6 @@ $zoomie_teal: #57ccd1;
     }
     .modal_right,
     .modal_left {
-      background: rgb(213, 183, 65);
       height: 100%;
       width: 50%;
       div {
@@ -87,7 +84,7 @@ $zoomie_teal: #57ccd1;
       .add_bottom {
         display: flex;
         width: auto;
-        justify-content: space-evenly;
+        justify-content: space-between;
       }
     }
   }
