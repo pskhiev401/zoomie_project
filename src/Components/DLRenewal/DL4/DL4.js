@@ -14,7 +14,7 @@ class DL4 extends Component {
   render() {
     console.log(this.props);
     return (
-      <div id='dl4' className="dl_wiz_main">
+      <div className="dl_wiz_main">
         <div className="left_nav_container">
           <UserSideNav />
         </div>
@@ -24,7 +24,7 @@ class DL4 extends Component {
             <h1>Where Do You Get Mail? </h1>
             <h2>We're sending a you a Costco Pizza</h2>
             <div>
-              <h2>Address1</h2>
+              <h2>Address 1</h2>
               <input
                 name="address_1"
                 defaultValue={this.props.address_1}
@@ -33,7 +33,7 @@ class DL4 extends Component {
               />
             </div>
             <div>
-              <h2>Address2</h2>
+              <h2>Address 2</h2>
               <input
                 name="address_2"
                 defaultValue={this.props.address_2}
@@ -70,7 +70,7 @@ class DL4 extends Component {
                 onChange={e => this.props.handleChange(e)}
               />
             </div>
-            <div>
+            {/* <div>
               <h2>Organ Donor</h2>
               <select
                 name="organ_donor"
@@ -93,7 +93,7 @@ class DL4 extends Component {
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
               </select>
-            </div>
+            </div> */}
             <div>
               <Link to="/reviewdl">
                 <button

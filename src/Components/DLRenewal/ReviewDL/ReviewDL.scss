@@ -1,18 +1,13 @@
-.review_main {
-  height: 90vh;
-  background: lightseagreen;
-  display: flex;
-
-  // .left_nav_container{
-  //   width: 20vw;
-  //   background: lightblue;
-  // }
-
-  .right_container {
-    width: 80vw;
-  }
+#dl_review {
+  height: auto;
+  min-height: 90vh;
+}
+.right_container {
+  width: 80vw;
 }
 .stripe_container {
-  background: lightgoldenrodyellow;
-  border: 1px dashed salmon;
+  background: lightcyan;
+  padding: 1%;
+  min-height: 35vh;
+  border-radius: 2%;
 }

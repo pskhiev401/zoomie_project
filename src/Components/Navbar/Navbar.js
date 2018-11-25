@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 class Navbar extends Component {
   logoutRedirect = () => {
-    // window.location.href = `${process.env.REACT_APP_CLIENT}/logout`;
+    window.location.href = `${process.env.REACT_APP_CLIENT}`;
   };
 
   render() {

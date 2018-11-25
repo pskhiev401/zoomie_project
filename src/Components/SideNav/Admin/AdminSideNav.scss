@@ -4,6 +4,7 @@
   width: auto;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
 
   .nav_item {
     display: flex;
@@ -17,9 +18,22 @@
       width: auto;
       margin-right: 7%;
     }
-    h2 {
-      font-size: 1.1em;
-      padding: 2%;
-    }
+  }
+}
+
+#admin_nav{
+  h2 {
+    color: #6db4b6;
+    text-shadow: 2px 2px 4px #454343;
+    margin-left: 1.5vw;
+    font-size: 1.1em;
+    padding: 2%;
+  }
+  a:link,
+  a:visited,
+  a:active,
+  a:focus {
+    text-decoration: none;
+    color: black;
   }
 }
