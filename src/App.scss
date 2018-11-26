@@ -128,7 +128,7 @@ table {
 
 //SCSS STYLING THROUGHOUT THE PROJECT FROM THIS POINT
 $zoomie_teal: #57ccd1;
-$zoomie_slate: #4f4e4c;
+// $zoomie_slate: #4f4e4c;
 $zoomie_grey: #776f6f;
 $zoomie_linen: #e1dede;
 
@@ -139,7 +139,7 @@ $zoomie_linen: #e1dede;
   box-sizing: border-box;
 }
 .App {
-  background: $zoomie_slate;
+  background: #fff;
 
   button {
     color: white;

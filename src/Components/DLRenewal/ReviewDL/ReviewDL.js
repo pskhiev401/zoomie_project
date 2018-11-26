@@ -272,9 +272,7 @@ class ReviewDL extends Component {
 
               {this.state.infoReviewed && (
                 <div className="stripe_container">
-                  <StripeProvider
-                    apiKey={process.env.REACT_APP_STRIPE_PUBLIC_KEY}
-                  >
+                  <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PUBLIC_KEY}>
                     <div className="stripe_inside">
                       <h1>Payment Info</h1>
                       <Elements>

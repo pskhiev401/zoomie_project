@@ -11,7 +11,7 @@ class Landing extends Component {
         <div className='img_overlay'></div>
         <div className="landing_container" >
           <h1>Zoomie</h1> <br />
-          <h3>stop wasting time</h3> <br />
+          <h3>Go. Explore. Instead.</h3> <br />
             <button onClick={() => this.redirect() }>START</button>
         </div>
       </div>
