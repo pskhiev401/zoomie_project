@@ -29,21 +29,18 @@ $zoomie_teal: #57ccd1;
 
     .scan_button {
       margin: auto;
-      // width: 5;
     }
   }
 }
 .scanner_modal {
   height: auto;
-  min-width: 81vh;
+  min-width: 30vw;
   background: #a5bbeb;
-  // border: 1px dashed orange;
   border-radius: 1%;
 
   .modal_content {
     margin: auto;
     width: 90%;
-    // background: pink;
     display: flex;
     flex-direction: column;
 
@@ -68,22 +65,32 @@ $zoomie_teal: #57ccd1;
     .modal_bottom {
       img {
         height: 5vh;
-        margin-right: 2%;
+        margin-right: 5%;
       }
       display: flex;
     }
     .modal_right,
     .modal_left {
-      height: 100%;
-      width: 50%;
+      height: auto;
+      width: 18vw;
+      font-size: 1.2em;
+
       div {
         padding: 3%;
       }
     }
+
+    .modal_left{
+      margin-left: 4%;
+    }
     .modal_right {
+      flex-direction: column;
+      // flex-wrap: nowrap;
+      
+      width: 20vw;
       .add_bottom {
         display: flex;
-        width: auto;
+        flex-direction: row;
         justify-content: space-between;
       }
     }

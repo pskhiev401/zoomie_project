@@ -19,27 +19,29 @@
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      // background: #f08080;
       width: 55%;
       border-radius: 1% 0 0 1%;
       h2 {
-        text-align: center;
-        font-size: 1.5em;
+        color: #69bec4;
+        text-shadow: 1px 1px 1px #20114b;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 3em;
+        display: flex;
+        justify-content: center;
       }
       .center_boxes {
         display: flex;
-        align-items: center;  
+        align-items: center;
         justify-content: space-evenly;
         height: auto;
-        #arrow{
-          
+        #arrow {
           height: 5vh;
         }
         h3 {
-          font-size: 1em;
+          font-size: 1.2em;
+          color: rgba(120, 113, 113, 0.838);
         }
-
-        img{
+        img {
           height: 10vh;
         }
       }
@@ -47,16 +49,23 @@
       .bottom_button {
         display: flex;
         justify-content: space-evenly;
-        background: lightgreen;
+        
 
         #dash_button {
           display: flex;
           justify-content: center;
           align-items: center;
           border-radius: 10px;
+          border: 1px solid paleturquoise;
+          background: paleturquoise;
+          width: 7vw;
+          color: rgba(72, 65, 65, 0.81);
+          text-shadow: 2px 2px 2px rgba(0, 0, 0, 0);
 
           img {
             height: 5vh;
+            padding: 1%;
+            margin: 2%;
           }
         }
       }
@@ -66,14 +75,11 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      opacity: 0.93;
+      opacity: 0.92;
       width: 33vw;
       text-align: center;
-      color: rgb(201, 158, 232);
-      text-shadow: 1.5px 3px 4px #20114b;
-      font-family: "Yellowtail", cursive;
-      font-size: 3.3em;
-      padding-top:44%;
+      padding-top: 44%;
+      border-radius: 0 1% 1% 0;
     }
   }
 }

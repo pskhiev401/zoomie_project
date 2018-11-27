@@ -42,6 +42,9 @@ class CheckoutForm extends Component {
     if (this.state.complete) return <h1>Purchase Complete</h1>;
     return (
       <div className="checkout">
+        <p>CA DMV: $28</p>
+        <p>Zoomie Fee: $20</p>
+        <p>Total Cost: $48</p> <br />
         <p>Enter Your Payment Details</p>
         <CardElement />
         <button

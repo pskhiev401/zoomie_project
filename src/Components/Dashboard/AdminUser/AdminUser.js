@@ -94,17 +94,17 @@ class AdminUser extends Component {
           <AdminSideNav />
         </div>
         <div className="admin_right">
-          <h1>Pending Job Tickets</h1>
+          <h1>Pending Job Tickets</h1> 
           <div className="pending_container">{displayAllPending}</div>
         </div>
         <div className="admin_right">
           <h1>Completed Job Tickets</h1>
           <div className="pending_container">{displayAllCompleted}</div>
         </div>
-        <div className="admin_right">
+        {/* <div className="admin_right">
           <h1>Charts</h1>
           <div className="pending_container">TURTLE POWER</div>
-        </div>
+        </div> */}
         <Modal open={open} onClose={this.onCloseModal} center>
           <div className="admin_modal">
             <h1>

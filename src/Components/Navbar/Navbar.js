@@ -22,9 +22,9 @@ class Navbar extends Component {
         <div className="nav_middle"></div>
 
         <div className="nav_right">
-          <h2>
+          {/* <h2>
             {this.props.first_name} {this.props.last_name}{" "}
-          </h2>
+          </h2> */}
           <h2 onClick={() => this.logoutRedirect()}>SIGNOUT</h2>
           {/* logout button doesnt work yet */}
         </div>

@@ -89,7 +89,7 @@ app.post("/charge", async (req, res) => {
   console.log('hit',req.body);
   try {
     let { status } = await stripe.charges.create({
-      amount: 2000, //cents
+      amount: 4800, //cents
       currency: "usd",
       description: "Zoomie Service Fee",
       source: req.body
