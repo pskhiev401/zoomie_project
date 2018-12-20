@@ -21,8 +21,8 @@ const {
   submitDL,
   getCompletedDlForm,
   finalDLsubmit
-} = require('./controllers/dlController');
-const { scannedDL } = require('./controllers/dlScanController');
+} = require('./controllers/dlcontroller');
+const { scannedDL } = require('./controllers/dlscancontroller');
 const {
   getAllPending,
   getAllCompleted,
@@ -33,7 +33,7 @@ const {
 const {
   sendEmail1,
   sendEmail2
-} = require('./controllers/nodeMailerController');
+} = require('./controllers/nodemailercontroller');
 
 app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));

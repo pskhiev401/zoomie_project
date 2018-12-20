@@ -1,7 +1,7 @@
 module.exports = {
   getDataAfterLogin: (req, res, next) => {
-    const db = req.app.get("db");
-    console.log("seeeesions", req.user);
+    const db = req.app.get('db');
+    console.log('seeeesions', req.user);
     db.get_user_info(req.user.auth_id)
       .then(response => {
         res.status(200).json(response);
@@ -10,8 +10,8 @@ module.exports = {
   },
 
   submitDL: (req, res, next) => {
-    const db = req.app.get("db");
-    console.log("teeest", req.body, req.user.auth_id);
+    const db = req.app.get('db');
+    console.log('teeest', req.body, req.user.auth_id);
     // console.log('session', req.session)
     const {
       // first_name,
@@ -59,7 +59,7 @@ module.exports = {
       user_email
     ])
       .then(response => {
-        console.log("test", response);
+        console.log('test', response);
         res.status(200).json(response);
       })
       .catch(err => {
@@ -69,7 +69,7 @@ module.exports = {
   },
 
   getCompletedDlForm: (req, res, next) => {
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     db.get_completed_dl()
       .then(response => {
         res.status(200).json(response);
@@ -79,10 +79,10 @@ module.exports = {
 
   finalDLsubmit: (req, res, next) => {
     // console.log("corndog", req.params.id);
-    console.log("req.body>>>", req.body.e);
-    console.log('req parrrrams', req.params)
+    console.log('req.body>>>', req.body.e);
+    console.log('req parrrrams', req.params);
     // console.log(req.params);
-    const db = req.app.get("db");
+    const db = req.app.get('db');
     const {
       first_name,
       last_name,
@@ -131,7 +131,7 @@ module.exports = {
       user_email
     ])
       .then(response => {
-        console.log("PUT successful", response);
+        console.log('PUT successful', response);
         res.status(200).json(response);
       })
       .catch(err => {
@@ -139,4 +139,4 @@ module.exports = {
         res.status(500).send(err);
       });
   }
-}
+};
