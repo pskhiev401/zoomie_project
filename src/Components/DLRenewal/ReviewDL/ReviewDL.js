@@ -22,9 +22,7 @@ class ReviewDL extends Component {
 
   finishedRedirect = () => {
     console.log("hit");
-    setTimeout(() => {
-      window.location.href = process.env.REACT_APP_CLIENT;
-    }, 1700);
+    setTimeout(() => {window.location.href = process.env.REACT_APP_CLIENT;}, 1700);
   };
 
   finalDLSubmit = async e => {

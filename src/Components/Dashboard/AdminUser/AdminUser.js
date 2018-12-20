@@ -67,12 +67,8 @@ class AdminUser extends Component {
     // console.log("completed Orders", this.state.completedOrders);
     // console.log("selectedObject", this.state.selectedObject);
     const { open } = this.state;
-    const {
-      first_name,
-      last_name,
-      status,
-      user_email
-    } = this.state.selectedObject;
+    const {first_name,last_name,status,user_email} = this.state.selectedObject;
+    
     let displayAllPending = this.state.pendingOrders.map((e, i) => {
       return (
         <div key={i} className="user_card">
@@ -117,17 +113,12 @@ class AdminUser extends Component {
               <textarea
                 defaultValue={this.state.default_message}
                 maxLength={250}
-                onChange={e =>
-                  this.setState({ default_message: e.target.value })
-                }
+                onChange={e =>this.setState({ default_message: e.target.value })}
               />
             )}
             <br />
             <div className="btn_container">
-              {status === "Completed" && (
-                <button
-                  onClick={() =>
-                    this.emailHandler2({
+              {status === "Completed" && ( <button onClick={() => this.emailHandler2({
                       obj: this.state.selectedObject,
                       emailMessage: this.state.default_message
                     })

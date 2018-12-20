@@ -6,7 +6,7 @@ const GET_USER_INFO = "GET_USER_INFO";
 const SEND_FINAL_DL = "SEND_FINAL_DL";
 
 const initialState = {
-//CAPT HINDSIGHT: WE SHOULD HAVE JUST USED REQ.USER.ID INSTEAD OF PASSING IN auth_id
+  //CAPT HINDSIGHT: WE SHOULD HAVE JUST USED REQ.USER.ID INSTEAD OF PASSING IN auth_id
   auth_id: "",
   first_name: "",
   last_name: "",
@@ -102,7 +102,7 @@ export default function dlReducer(state = initialState, action) {
       return { ...state };
     // WE DID NOT NEED PENDING/FULFILLED/REJECTED BC WE DID OUR AXIOS GET OUTSIDE THE REDUCER
     case `${SEND_FINAL_DL}_FULFILLED`:
-    console.log(action.payload)
+      console.log(action.payload)
       return { ...state };
     default:
       return state;

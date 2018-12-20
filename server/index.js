@@ -27,10 +27,8 @@ const {
   updateStatus,
   deleteJob
 } = require("./controllers/admincontroller");
-const {
-  sendEmail1,
-  sendEmail2
-} = require("./controllers/nodeMailerController");
+
+const {sendEmail1, sendEmail2} = require("./controllers/nodeMailerController");
 
 app.use(cors());
 app.use(bodyParser.json({ limit: "50mb" }));
