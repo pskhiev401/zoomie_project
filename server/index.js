@@ -11,6 +11,8 @@ const massive = require('massive');
 const cors = require('cors');
 const authCtrl = require('./controllers/authcontroller');
 const passport = require('passport');
+
+const path = require('path');
 //*** STRIPE *****
 const stripe = require('stripe')(process.env.STRIPE_KEY);
 

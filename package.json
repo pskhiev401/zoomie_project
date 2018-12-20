@@ -18,6 +18,7 @@
     "nodemailer-ses-transport": "^1.5.1",
     "passport": "^0.4.0",
     "passport-auth0": "^1.1.0",
+    "path": "^0.12.7",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-file-base64": "^1.0.3",
