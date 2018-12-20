@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 3001;
 const massive = require('massive');
 const cors = require('cors');
-const authCtrl = require('./controllers/authcontroller');
+const authCtrl = require('./controllers/authController');
 const passport = require('passport');
 
 const path = require('path');
@@ -21,19 +21,19 @@ const {
   submitDL,
   getCompletedDlForm,
   finalDLsubmit
-} = require('./controllers/dlcontroller');
-const { scannedDL } = require('./controllers/dlscancontroller');
+} = require('./controllers/dlController');
+const { scannedDL } = require('./controllers/dlScanController');
 const {
   getAllPending,
   getAllCompleted,
   updateStatus,
   deleteJob
-} = require('./controllers/admincontroller');
+} = require('./controllers/adminController');
 
 const {
   sendEmail1,
   sendEmail2
-} = require('./controllers/nodemailercontroller');
+} = require('./controllers/nodeMailerController');
 
 app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
