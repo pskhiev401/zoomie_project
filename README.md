@@ -1,53 +1,74 @@
 # Zoomie
 
-### An Innovative DMV Automation Web Application.
-
-#### Technologies: HTML, SASS, React, Redux, Node, Express, PostgreSQL
+### An Innovative DMV Automation Web Application. 
 
 Created by Patric Khiev in October 2018.
 
-A mock web app where users can get a replacement Drivers License or State ID by simply upload a photo of their DL or State ID Card. The goal of this application was to make it painless for the user.
+A mock web app where users can get a replacement Drivers License or State ID by simply upload a photo of their DL or State ID Card. The goal of this application was to make it painless for the user.  
 
-The project goal was met by creating a scanner feature where users can simply upload an image of their credentials versus having to fill out a 20+ question form. However the form wizard was a necessary evil and part of the MVP plan should the user lose their ID or the ID became too mangled to scan.
+The project goal was met by creating a scanner feature where users can simply upload an image of their credentials versus having to fill out a 20+ question form.  However the form wizard was a necessary evil and part of the MVP plan should the user lose their ID or the ID became too mangled to scan. 
 
-![landing_login](https://s3.amazonaws.com/zoomie/v3.gif)
+![v4](https://s3.amazonaws.com/zoomie/v4.gif)
 
-# Table of Contents
+## Table of Contents
 
-[Preplanning](#preplanning) - [1. Wireframing](#wireframing) - [2. User Stories](#user-stories) -[ 3. Admin Stories](#admin-stories) - [ 4. Component Tree](#component-tree) - [5. Schema](#schema)
+[Planning](#planning)
 
-[Main Challenges](#main-challenges) - [1. Conditional Styling](#conditional-styling) - [2. Group Programming](#averaged-profile-algorithm) -
+-  [Wireframing](#wireframing) 
+- [User Stories](#user-stories) 
+- [ Admin Stories](#admin-stories) 
+- [ Component Tree](#component-tree) 
+-  [Schema](#schema)
 
-- [Account Creation](#account-creation) - [Quiz](#quiz) [Authorization](#authorization)
+[Challenges](#challenges) 
+- [Scanner](#scanner) 
 
-* [Technology](#technology) - [Etc](#)
 
-## Preplanning
+## Planning
 
-#### Wireframing
-
+### Wireframing
 In retrospect, wireframing was probably the most fruitful planning tool used for this project. It allowed us to see the totality of the project, revise features, and scale back features as necessary.
 
-Below is a visual of the plan of attack.
+Below is a visual of the plan of attack.  
 
 ![wireframe1](https://s3.amazonaws.com/zoomie/Zoomie+WireFrame.jpg)
 
-Initially, Adobe XD was used to mock up some views.
+Initially, Adobe XD was used to mock up some views. 
 
 ![adobeXD](https://s3.amazonaws.com/zoomie/Planningv1.png)
 
+Adobe XD Flow Demo
+
 ![adobeXDv2](https://s3.amazonaws.com/zoomie/zoommobile1.gif)
 
-#### User Stories
+### User Stories
+ - Renew ID/DL online without having to go to the DMV
+- Have scanner feature to bypass filling out forms
+- Pay for services online
 
-- Users should be able to: - Renew ID/DL online without having to go to the DMV - Have scanner feature to bypass filling out forms - Pay for services online
-
-#### Admin Stories
-
-- Admins should be able to: - track and distinguish 'pending' and 'completed' job tickets - change job status from 'pending' to 'complete' - notify customers via email about their order status
+### Admin Stories
+- track and distinguish 'pending' and 'completed' job tickets
+- change job status from 'pending' to 'completed'
+- notify customers via email about their order status 
+	
 
 ### Features
+- Millennial-friendly UX/UI
+- Form Wizard
+- Scan DL/ID
+- Notify Customers
+- Manage Job Tickets
+
+### Component Tree
+
+![ComponentTree](https://s3.amazonaws.com/zoomie/Z_ComponentTree.png)
 
 ### Schema
-
 ![schema](https://s3.amazonaws.com/zoomie/Zoomie_schema.png)
+## Challenges
+
+### Scanner
+The scanner feature was tough feature to implement for a variety of reasons. We spent a significant amount of time researching for different technologies to be able to 'read' ID cards. Although Google Vision API was very powerful, however it was overkill for the scope of this project. The real breakthrough happened when we discovered a 3rd Party API (Microblink) which does exactly what we're seeking to do. 
+
+#### The 'Eureka!' Moment
+The real challenge was to figure out a way to convert images of ones ID into base64 and then hit the Microblink API. Another issue was with Node, which has a preset payload capacity. Images like IDs are hard to read when its resolution is small, and figuring out the 'goldilocks' ratio between readability and not overwhelming our payload was a tricky balancing act.
