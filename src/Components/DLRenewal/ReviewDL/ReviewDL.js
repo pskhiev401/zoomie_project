@@ -34,6 +34,7 @@ class ReviewDL extends Component {
   };
   render() {
     // console.log(this.props);
+    console.log(this.state)
     return (
       <div id="dl_review" className="dl_wiz_main">
         <div className="left_nav_container">
